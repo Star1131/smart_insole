@@ -185,7 +185,19 @@ class CalibrationEngine(QObject):
         x = np.array([p.avg_adc for p in points])
         y = np.array([p.pressure_kpa for p in points])
 
-        coeffs = np.polyfit(x, y, deg=1)
+        if np.ptp(x) == 0:
+            logger.warning(
+                "Zone '%s' ADC values are all identical (%.2f), cannot fit. "
+                "Check if sensor data is reaching the calibration engine.",
+                zone_name, float(x[0]),
+            )
+            return None
+
+        try:
+            coeffs = np.polyfit(x, y, deg=1)
+        except np.linalg.LinAlgError:
+            logger.error("Zone '%s' linear fit failed (SVD did not converge)", zone_name)
+            return None
         a, b = float(coeffs[0]), float(coeffs[1])
 
         y_pred = a * x + b
@@ -346,11 +358,20 @@ class CalibrationEngine(QObject):
         per_frame_avgs: list[float] = []
         valid_counts: list[int] = []
 
+        use_mask = self._valid_mask is not None
+        if use_mask:
+            mask_region = self._valid_mask[zone.row_start : zone.row_end + 1, :]
+            if not np.any(mask_region):
+                use_mask = False
+                logger.warning(
+                    "Zone '%s' has 0 valid sensors in mask, ignoring mask for ADC computation",
+                    zone.name,
+                )
+
         for frame in frames:
             region = frame[zone.row_start : zone.row_end + 1, :]
 
-            if self._valid_mask is not None:
-                mask_region = self._valid_mask[zone.row_start : zone.row_end + 1, :]
+            if use_mask:
                 region = np.where(mask_region, region, 0)
 
             valid = region[region >= self._noise_threshold]
@@ -374,7 +395,8 @@ class CalibrationEngine(QObject):
 
         if self._valid_mask is not None:
             mask_region = self._valid_mask[zone.row_start : zone.row_end + 1, :]
-            region = np.where(mask_region, region, 0)
+            if np.any(mask_region):
+                region = np.where(mask_region, region, 0)
 
         valid = region[region >= self._noise_threshold]
         count = int(valid.size)

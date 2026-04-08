@@ -36,7 +36,6 @@ from data.models import CalibrationPoint, CalibrationProfile, FootZone, ZoneCali
 
 class CalibrationWizard(QWizard):
     profile_ready = Signal(object, bool)
-    PRESSURE_GROUP_COUNT = 3
 
     STEP_PREPARE = 0
     STEP_ZERO = 1
@@ -58,8 +57,6 @@ class CalibrationWizard(QWizard):
         self._last_points: dict[str, CalibrationPoint] = {}
         self._collect_target_zone: str = ""
         self._collect_position_label: str = ""
-        self._collect_force_values: list[float] = []
-        self._collect_group_index: int = 0
         self._collect_repeats_total: int = 0
         self._collect_repeats_done: int = 0
 
@@ -123,18 +120,7 @@ class CalibrationWizard(QWizard):
             QMessageBox.warning(self, "提示", "请先完成零点校准。")
             return False
         if self.currentId() == self.STEP_COLLECT:
-            required_points = self.PRESSURE_GROUP_COUNT + 1
-            has_points = any(
-                self._engine.get_data_point_count(z.name) >= required_points
-                for z in self._zones
-            )
-            if not has_points:
-                QMessageBox.warning(
-                    self,
-                    "提示",
-                    f"请至少完成 1 个分区同一位置的 {self.PRESSURE_GROUP_COUNT} 组不同压力采集后再进入拟合步骤。",
-                )
-                return False
+            has_points = any(self._engine.get_data_point_count(z.name) >= 2 for z in self._zones)
             if not has_points:
                 QMessageBox.warning(self, "提示", "请至少采集 2 个砝码点后再进入拟合步骤。")
                 return False
@@ -145,11 +131,6 @@ class CalibrationWizard(QWizard):
 
     def _build_prepare_page(self, page: QWizardPage) -> None:
         layout = QVBoxLayout(page)
-        layout.addWidget(
-            QLabel(
-                f"每个位置将依次完成 {self.PRESSURE_GROUP_COUNT} 组不同压力值采集，每组再按设定次数重复采集。"
-            )
-        )
         layout.addWidget(QLabel("输入砝码底面积，检测有效传感器掩码，并确认分区边界。"))
 
         form = QFormLayout()
@@ -158,16 +139,11 @@ class CalibrationWizard(QWizard):
         self._area_spin.setValue(50.0)
         self._area_spin.setSuffix(" cm²")
         self._area_spin.setDecimals(2)
-        self._force_spins = [QDoubleSpinBox(page) for _ in range(self.PRESSURE_GROUP_COUNT)]
-        for force_spin in self._force_spins:
-            force_spin.hide()
         form.addRow("砝码底面积:", self._area_spin)
-        form.addRow("第 2 组作用力:", self._force_spins[1])
-        form.addRow("第 3 组作用力:", self._force_spins[2])
         layout.addLayout(form)
 
         self._mask_status = QLabel("掩码状态：未检测")
-        self._start_mask_btn = QPushButton("开始检测 (1秒)")
+        self._start_mask_btn = QPushButton("开始检测（1秒）")
         hl = QHBoxLayout()
         hl.addWidget(self._mask_status, 1)
         hl.addWidget(self._start_mask_btn)
@@ -231,19 +207,13 @@ class CalibrationWizard(QWizard):
         self._repeat_spin = QSpinBox(page)
         self._repeat_spin.setRange(1, 20)
         self._repeat_spin.setValue(3)
-        default_force_values = (19.60, 49.00, 98.00)
-        self._force_spins: list[QDoubleSpinBox] = []
-        for idx in range(self.PRESSURE_GROUP_COUNT):
-            force_spin = QDoubleSpinBox(page)
-            force_spin.setRange(0.1, 10000.0)
-            force_spin.setValue(default_force_values[idx])
-            force_spin.setSuffix(" N")
-            force_spin.setDecimals(2)
-            force_spin.valueChanged.connect(self._sync_pressure_hint)
-            self._force_spins.append(force_spin)
-        self._weight_spin = self._force_spins[0]
+        self._weight_spin = QDoubleSpinBox(page)
+        self._weight_spin.setRange(0.1, 10000.0)
+        self._weight_spin.setValue(49.0)
+        self._weight_spin.setSuffix(" N")
+        self._weight_spin.setDecimals(2)
+        self._weight_spin.valueChanged.connect(self._sync_pressure_hint)
         self._pressure_hint = QLabel("--")
-        self._pressure_hint.setWordWrap(True)
         form.addRow("目标分区:", self._zone_combo)
         form.addRow("放置位置:", self._position_edit)
         form.addRow("重复次数:", self._repeat_spin)

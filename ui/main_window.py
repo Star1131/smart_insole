@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import deque
+import logging
 
 from PySide6.QtCore import QTimer, Qt, Slot
 from PySide6.QtGui import QAction, QActionGroup
@@ -30,6 +31,7 @@ from ui.timeseries_view import TimeSeriesView
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
+        self._logger = logging.getLogger(__name__)
         self.setWindowTitle(f"{APP_NAME} - 实时监控")
         self.resize(1360, 860)
         self.statusBar().showMessage("就绪")
@@ -51,6 +53,9 @@ class MainWindow(QMainWindow):
         self.stream_hint_label = QLabel("串口链路状态：未收到数据", self)
         self.stream_hint_label.setSizePolicy(
             QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed
+        )
+        self.stream_hint_label.setStyleSheet(
+            "padding: 6px 10px; border-radius: 6px; background: #1f2b3b; color: #b9d2ff;"
         )
 
         self._refresh_timer = QTimer(self)
@@ -223,16 +228,22 @@ class MainWindow(QMainWindow):
         if self._latest_frame is None:
             return
 
-        frame = self._latest_frame
-        matrix = frame.adc_raw if self._display_mode == "raw" else frame.adc_calibrated
-        self.heatmap_view.update_heatmap(matrix)
-        self.metrics_panel.update_frame(frame)
-        self.imu_view.update_frame(frame)
+        try:
+            frame = self._latest_frame
+            matrix = frame.adc_raw if self._display_mode == "raw" else frame.adc_calibrated
+            self.heatmap_view.update_heatmap(matrix)
+            self.metrics_panel.update_frame(frame)
+            self.imu_view.update_frame(frame)
 
-        if self._pending_frames:
-            batch = list(self._pending_frames)
+            if self._pending_frames:
+                batch = list(self._pending_frames)
+                self._pending_frames.clear()
+                self.timeseries_view.append_frames(batch)
+        except Exception:
+            # 保护 UI 刷新链路：单帧异常不中断串口采集与后续渲染。
+            self._logger.exception("UI refresh failed")
+            self.statusBar().showMessage("UI 刷新异常，已自动恢复", 3000)
             self._pending_frames.clear()
-            self.timeseries_view.append_frames(batch)
 
     def _show_todo(self, message: str) -> None:
         QMessageBox.information(self, APP_NAME, message)

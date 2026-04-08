@@ -259,3 +259,254 @@ Traceback (most recent call last):
   File "d:\Desktop\AI点云传输\smart_insole\ui\calibration_wizard.py", line 162, in _build_prepare_page
     for force_spin in self._force_spins:
 AttributeError: 'CalibrationWizard' object has no attribute '_force_spins'
+2026-04-08 18:19:37,636 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 18:19:46,811 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 18:22:14,480 | INFO | __main__ | Application started
+2026-04-08 18:23:49,933 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 18:33:38,061 | INFO | __main__ | Application started
+2026-04-08 18:57:00,133 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 18:58:53,034 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 19:02:04,994 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 19:07:49,537 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 19:08:11,562 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 59, in <module>
+    raise SystemExit(main())
+  File "d:\Desktop\AI点云传输\smart_insole\main.py", line 51, in main
+    window = MainWindow()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\main_window.py", line 50, in __init__
+    self.heatmap_view = HeatmapView(parent=self)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 66, in __init__
+    self.update_heatmap(self._data)
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 117, in update_heatmap
+    self._render_foot_outline()
+  File "d:\Desktop\AI点云传输\smart_insole\ui\heatmap_view.py", line 190, in _render_foot_outline
+    self._outline_item.scale(1.0 / self._render_scale, 1.0 / self._render_scale)
+TypeError: IsocurveItem.scale() takes no arguments (2 given)
+2026-04-08 19:10:03,856 | INFO | __main__ | Application started
+2026-04-08 19:12:00,499 | INFO | __main__ | Application started
+2026-04-08 19:24:46,507 | INFO | __main__ | Application started
+2026-04-08 19:31:20,434 | INFO | data.calibration_engine | Valid mask detected: 0/128 sensors active
+2026-04-08 19:31:29,282 | INFO | data.calibration_engine | Zone 'heel' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:31:29,286 | INFO | data.calibration_engine | Zone 'midfoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:31:29,289 | INFO | data.calibration_engine | Zone 'forefoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:31:29,293 | INFO | data.calibration_engine | Zone 'toes' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:32:58,955 | INFO | data.calibration_engine | Zone 'toes' point: P=24.35 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:33:01,957 | INFO | data.calibration_engine | Zone 'toes' point: P=24.35 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:33:04,957 | INFO | data.calibration_engine | Zone 'toes' point: P=24.35 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:01,478 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.13 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:04,428 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.13 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:07,447 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.13 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:42,184 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:45,175 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:34:48,139 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:35:20,960 | INFO | data.calibration_engine | Zone 'heel' point: P=22.72 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:35:23,975 | INFO | data.calibration_engine | Zone 'heel' point: P=22.72 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:35:26,976 | INFO | data.calibration_engine | Zone 'heel' point: P=22.72 kPa, ADC=0.00 (std: 0.00)
+2026-04-08 19:35:39,235 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\ui\calibration_wizard.py", line 368, in _on_fit_all
+    self._fit_results = self._engine.fit_all_zones()
+  File "d:\Desktop\AI点云传输\smart_insole\data\calibration_engine.py", line 172, in fit_all_zones
+    result = self.fit_zone(zone.name)
+  File "d:\Desktop\AI点云传输\smart_insole\data\calibration_engine.py", line 188, in fit_zone
+    coeffs = np.polyfit(x, y, deg=1)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\lib\_polynomial_impl.py", line 658, in polyfit
+    c, resids, rank, s = lstsq(lhs, rhs, rcond)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\linalg\_linalg.py", line 2508, in lstsq
+    x, resids, rank, s = gufunc(a, b, rcond, signature=signature)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\linalg\_linalg.py", line 116, in _raise_linalgerror_lstsq
+    raise LinAlgError("SVD did not converge in Linear Least Squares")
+numpy.linalg.LinAlgError: SVD did not converge in Linear Least Squares
+2026-04-08 19:35:45,512 | ERROR | __main__ | Unhandled exception
+Traceback (most recent call last):
+  File "d:\Desktop\AI点云传输\smart_insole\ui\calibration_wizard.py", line 368, in _on_fit_all
+    self._fit_results = self._engine.fit_all_zones()
+  File "d:\Desktop\AI点云传输\smart_insole\data\calibration_engine.py", line 172, in fit_all_zones
+    result = self.fit_zone(zone.name)
+  File "d:\Desktop\AI点云传输\smart_insole\data\calibration_engine.py", line 188, in fit_zone
+    coeffs = np.polyfit(x, y, deg=1)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\lib\_polynomial_impl.py", line 658, in polyfit
+    c, resids, rank, s = lstsq(lhs, rhs, rcond)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\linalg\_linalg.py", line 2508, in lstsq
+    x, resids, rank, s = gufunc(a, b, rcond, signature=signature)
+  File "D:\Desktop\AI点云传输\smart_insole\.venv\lib\site-packages\numpy\linalg\_linalg.py", line 116, in _raise_linalgerror_lstsq
+    raise LinAlgError("SVD did not converge in Linear Least Squares")
+numpy.linalg.LinAlgError: SVD did not converge in Linear Least Squares
+2026-04-08 19:41:19,629 | INFO | __main__ | Application started
+2026-04-08 19:41:28,825 | INFO | data.calibration_engine | Valid mask detected: 11/128 sensors active
+2026-04-08 19:41:37,640 | INFO | data.calibration_engine | Zone 'heel' zero offset: 50.17 (std: 0.13)
+2026-04-08 19:41:37,644 | INFO | data.calibration_engine | Zone 'midfoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:41:37,648 | INFO | data.calibration_engine | Zone 'forefoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:41:37,652 | INFO | data.calibration_engine | Zone 'toes' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:45:56,374 | INFO | __main__ | Application started
+2026-04-08 19:46:16,802 | INFO | data.calibration_engine | Valid mask detected: 0/128 sensors active
+2026-04-08 19:46:23,638 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:46:23,641 | INFO | data.calibration_engine | Zone 'heel' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:46:23,641 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:46:23,642 | INFO | data.calibration_engine | Zone 'midfoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:46:23,642 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:46:23,645 | INFO | data.calibration_engine | Zone 'forefoot' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:46:23,645 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:46:23,648 | INFO | data.calibration_engine | Zone 'toes' zero offset: 0.00 (std: 0.00)
+2026-04-08 19:47:47,652 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:47:47,708 | INFO | data.calibration_engine | Zone 'heel' point: P=29.50 kPa, ADC=52.42 (std: 0.14)
+2026-04-08 19:47:50,637 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:47:50,694 | INFO | data.calibration_engine | Zone 'heel' point: P=29.50 kPa, ADC=52.64 (std: 0.07)
+2026-04-08 19:47:53,639 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:47:53,695 | INFO | data.calibration_engine | Zone 'heel' point: P=29.50 kPa, ADC=52.53 (std: 0.15)
+2026-04-08 19:48:19,320 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:48:19,381 | INFO | data.calibration_engine | Zone 'heel' point: P=21.60 kPa, ADC=52.25 (std: 0.10)
+2026-04-08 19:48:22,304 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:48:22,359 | INFO | data.calibration_engine | Zone 'heel' point: P=21.60 kPa, ADC=52.28 (std: 0.13)
+2026-04-08 19:48:25,298 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:48:25,361 | INFO | data.calibration_engine | Zone 'heel' point: P=21.60 kPa, ADC=52.33 (std: 0.13)
+2026-04-08 19:49:11,902 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:11,958 | INFO | data.calibration_engine | Zone 'midfoot' point: P=23.59 kPa, ADC=54.44 (std: 0.13)
+2026-04-08 19:49:14,871 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:14,937 | INFO | data.calibration_engine | Zone 'midfoot' point: P=23.59 kPa, ADC=54.52 (std: 0.13)
+2026-04-08 19:49:17,865 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:17,972 | INFO | data.calibration_engine | Zone 'midfoot' point: P=23.59 kPa, ADC=54.58 (std: 0.10)
+2026-04-08 19:49:40,286 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:40,342 | INFO | data.calibration_engine | Zone 'midfoot' point: P=31.18 kPa, ADC=57.12 (std: 0.06)
+2026-04-08 19:49:43,290 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:43,344 | INFO | data.calibration_engine | Zone 'midfoot' point: P=31.18 kPa, ADC=57.25 (std: 0.21)
+2026-04-08 19:49:46,291 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:49:46,350 | INFO | data.calibration_engine | Zone 'midfoot' point: P=31.18 kPa, ADC=57.37 (std: 0.22)
+2026-04-08 19:50:25,611 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:25,672 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.10 kPa, ADC=45.85 (std: 0.04)
+2026-04-08 19:50:28,644 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:28,736 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.10 kPa, ADC=45.85 (std: 0.04)
+2026-04-08 19:50:31,620 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:31,672 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.10 kPa, ADC=45.87 (std: 0.07)
+2026-04-08 19:50:53,233 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:53,289 | INFO | data.calibration_engine | Zone 'forefoot' point: P=36.47 kPa, ADC=48.72 (std: 0.04)
+2026-04-08 19:50:56,245 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:56,303 | INFO | data.calibration_engine | Zone 'forefoot' point: P=36.47 kPa, ADC=48.87 (std: 0.15)
+2026-04-08 19:50:59,237 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:50:59,289 | INFO | data.calibration_engine | Zone 'forefoot' point: P=36.47 kPa, ADC=49.05 (std: 0.11)
+2026-04-08 19:51:55,384 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:51:55,506 | INFO | data.calibration_engine | Zone 'toes' point: P=24.40 kPa, ADC=47.51 (std: 0.07)
+2026-04-08 19:51:58,383 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:51:58,435 | INFO | data.calibration_engine | Zone 'toes' point: P=24.40 kPa, ADC=47.54 (std: 0.09)
+2026-04-08 19:52:01,424 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:52:01,476 | INFO | data.calibration_engine | Zone 'toes' point: P=24.40 kPa, ADC=47.68 (std: 0.15)
+2026-04-08 19:52:18,095 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:52:18,156 | INFO | data.calibration_engine | Zone 'toes' point: P=32.86 kPa, ADC=49.36 (std: 0.05)
+2026-04-08 19:52:21,108 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:52:21,163 | INFO | data.calibration_engine | Zone 'toes' point: P=32.86 kPa, ADC=49.34 (std: 0.10)
+2026-04-08 19:52:24,104 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-08 19:52:24,159 | INFO | data.calibration_engine | Zone 'toes' point: P=32.86 kPa, ADC=49.36 (std: 0.13)
+2026-04-08 19:52:28,104 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.4887, b=-0.0547, R²=0.8611
+2026-04-08 19:52:28,105 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.4995, b=-0.4562, R²=0.9199
+2026-04-08 19:52:28,105 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6883, b=-0.6972, R²=0.9194
+2026-04-08 19:52:28,106 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.6005, b=-0.4064, R²=0.8986
+2026-04-08 19:52:39,591 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.4887, b=-0.0547, R²=0.8611
+2026-04-08 19:52:39,593 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.4995, b=-0.4562, R²=0.9199
+2026-04-08 19:52:39,593 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6883, b=-0.6972, R²=0.9194
+2026-04-08 19:52:39,593 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.6005, b=-0.4064, R²=0.8986
+2026-04-08 19:52:39,658 | INFO | data.calibration_engine | Calibration exported to D:\Desktop\AI点云传输\smart_insole\calibration_files\calibration_v2_20260408_194603.json
+2026-04-08 19:52:39,871 | INFO | data.calibration_engine | Calibration raw records exported to D:\Desktop\AI点云传输\smart_insole\calibration_files\calibration_v2_20260408_194603_raw.csv (14400 rows)
+2026-04-08 19:52:39,873 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.4887, b=-0.0547, R²=0.8611
+2026-04-08 19:52:39,873 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.4995, b=-0.4562, R²=0.9199
+2026-04-08 19:52:39,874 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6883, b=-0.6972, R²=0.9194
+2026-04-08 19:52:39,874 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.6005, b=-0.4064, R²=0.8986
+2026-04-08 20:10:44,659 | INFO | __main__ | Application started

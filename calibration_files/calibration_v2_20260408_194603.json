@@ -1,0 +1,291 @@
+{
+  "version": "2.0",
+  "device_id": "4",
+  "contact_area_cm2": 19.63,
+  "noise_threshold": 10,
+  "zone_config": {
+    "heel": {
+      "row_start": 0,
+      "row_end": 3,
+      "display_name": "后跟区"
+    },
+    "midfoot": {
+      "row_start": 4,
+      "row_end": 7,
+      "display_name": "足弓区"
+    },
+    "forefoot": {
+      "row_start": 8,
+      "row_end": 11,
+      "display_name": "前掌区"
+    },
+    "toes": {
+      "row_start": 12,
+      "row_end": 15,
+      "display_name": "脚趾区"
+    }
+  },
+  "zones": {
+    "heel": {
+      "zero_offset": 0.0,
+      "a": 0.48870659089750607,
+      "b": -0.0546739197643543,
+      "r_squared": 0.8610999435543181,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 29.49566989302089,
+          "avg_adc": 52.42111111111111,
+          "adc_std": 0.13559349802928797,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 29.49566989302089,
+          "avg_adc": 52.64074074074074,
+          "adc_std": 0.06594256968431363,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 29.49566989302089,
+          "avg_adc": 52.52796296296297,
+          "adc_std": 0.14628445803016565,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 21.599592460519613,
+          "avg_adc": 52.24604166666666,
+          "adc_std": 0.09768123291548325,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 21.599592460519613,
+          "avg_adc": 52.27770833333334,
+          "adc_std": 0.12681169739902634,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 21.599592460519613,
+          "avg_adc": 52.325625,
+          "adc_std": 0.1339878142780156,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        }
+      ]
+    },
+    "midfoot": {
+      "zero_offset": 0.0,
+      "a": 0.4995278184882194,
+      "b": -0.4562239863288833,
+      "r_squared": 0.919911649672356,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 23.58634742740703,
+          "avg_adc": 54.44104166666666,
+          "adc_std": 0.1318457050136847,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 23.58634742740703,
+          "avg_adc": 54.521458333333335,
+          "adc_std": 0.12923234217442975,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 23.58634742740703,
+          "avg_adc": 54.58020833333333,
+          "adc_std": 0.09708758037920652,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 31.176770249617935,
+          "avg_adc": 57.11642857142858,
+          "adc_std": 0.056080906084076586,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 31.176770249617935,
+          "avg_adc": 57.248571428571424,
+          "adc_std": 0.2073020734577039,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 31.176770249617935,
+          "avg_adc": 57.37476190476191,
+          "adc_std": 0.21577839896596795,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        }
+      ]
+    },
+    "forefoot": {
+      "zero_offset": 0.0,
+      "a": 0.6882512484680423,
+      "b": -0.6971756932334974,
+      "r_squared": 0.91944799021082,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 27.101375445746307,
+          "avg_adc": 45.8492857142857,
+          "adc_std": 0.04486752988626871,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 27.101375445746307,
+          "avg_adc": 45.85023809523808,
+          "adc_std": 0.043486776993042556,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 27.101375445746307,
+          "avg_adc": 45.872857142857136,
+          "adc_std": 0.07016501444238993,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 36.47478349465105,
+          "avg_adc": 48.72071428571429,
+          "adc_std": 0.03678629218223754,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 36.47478349465105,
+          "avg_adc": 48.865238095238105,
+          "adc_std": 0.15186743831665053,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 36.47478349465105,
+          "avg_adc": 49.05285714285714,
+          "adc_std": 0.1065635130470344,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        }
+      ]
+    },
+    "toes": {
+      "zero_offset": 0.0,
+      "a": 0.6005166519213614,
+      "b": -0.40642429214707404,
+      "r_squared": 0.8986370351306846,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 24.401426388181356,
+          "avg_adc": 47.51166666666666,
+          "adc_std": 0.07266743118863882,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 24.401426388181356,
+          "avg_adc": 47.538125,
+          "adc_std": 0.08526689104414055,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 24.401426388181356,
+          "avg_adc": 47.676875,
+          "adc_std": 0.15425096231466437,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 49.361666666666665,
+          "adc_std": 0.045977047413779074,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 49.336666666666666,
+          "adc_std": 0.10477820490074366,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 49.36270833333333,
+          "adc_std": 0.13022399905760673,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        }
+      ]
+    }
+  },
+  "created_at": "2026-04-08T19:52:39"
+}
