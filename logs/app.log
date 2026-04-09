@@ -695,3 +695,293 @@ KeyError: 4
 2026-04-09 11:21:09,390 | INFO | __main__ | Application started
 2026-04-09 11:21:55,395 | INFO | __main__ | Application started
 2026-04-09 11:22:11,327 | INFO | data.calibration_engine | Valid mask detected: 0/128 sensors active
+2026-04-09 14:53:54,646 | INFO | __main__ | Application started
+2026-04-09 14:57:56,791 | INFO | data.calibration_engine | Valid mask detected: 0/128 sensors active
+2026-04-09 14:58:03,169 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 14:58:03,170 | INFO | data.calibration_engine | Zone 'heel' zero offset: 0.00 (std: 0.00)
+2026-04-09 14:58:03,170 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 14:58:03,170 | INFO | data.calibration_engine | Zone 'midfoot' zero offset: 0.00 (std: 0.00)
+2026-04-09 14:58:03,170 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 14:58:03,170 | INFO | data.calibration_engine | Zone 'forefoot' zero offset: 0.00 (std: 0.00)
+2026-04-09 14:58:03,170 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 14:58:03,175 | INFO | data.calibration_engine | Zone 'toes' zero offset: 0.00 (std: 0.00)
+2026-04-09 15:00:27,284 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:00:27,334 | INFO | data.calibration_engine | Zone 'toes' point: P=17.52 kPa, ADC=55.17 (std: 0.02)
+2026-04-09 15:00:30,275 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:00:30,320 | INFO | data.calibration_engine | Zone 'toes' point: P=17.52 kPa, ADC=55.19 (std: 0.06)
+2026-04-09 15:00:33,256 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:00:33,306 | INFO | data.calibration_engine | Zone 'toes' point: P=17.52 kPa, ADC=55.21 (std: 0.07)
+2026-04-09 15:00:36,279 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:00:36,324 | INFO | data.calibration_engine | Zone 'toes' point: P=17.52 kPa, ADC=55.28 (std: 0.08)
+2026-04-09 15:01:00,429 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:00,475 | INFO | data.calibration_engine | Zone 'toes' point: P=26.85 kPa, ADC=59.62 (std: 0.16)
+2026-04-09 15:01:03,431 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:03,478 | INFO | data.calibration_engine | Zone 'toes' point: P=26.85 kPa, ADC=59.73 (std: 0.16)
+2026-04-09 15:01:06,419 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:06,478 | INFO | data.calibration_engine | Zone 'toes' point: P=26.85 kPa, ADC=59.79 (std: 0.18)
+2026-04-09 15:01:09,427 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:09,472 | INFO | data.calibration_engine | Zone 'toes' point: P=26.85 kPa, ADC=59.81 (std: 0.20)
+2026-04-09 15:01:42,438 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:42,495 | INFO | data.calibration_engine | Zone 'toes' point: P=34.95 kPa, ADC=62.50 (std: 0.13)
+2026-04-09 15:01:45,433 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:45,479 | INFO | data.calibration_engine | Zone 'toes' point: P=34.95 kPa, ADC=62.63 (std: 0.17)
+2026-04-09 15:01:48,423 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:48,510 | INFO | data.calibration_engine | Zone 'toes' point: P=34.95 kPa, ADC=62.73 (std: 0.15)
+2026-04-09 15:01:51,444 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:01:51,488 | INFO | data.calibration_engine | Zone 'toes' point: P=34.95 kPa, ADC=62.78 (std: 0.12)
+2026-04-09 15:02:15,715 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:02:15,765 | INFO | data.calibration_engine | Zone 'toes' point: P=43.91 kPa, ADC=64.44 (std: 0.09)
+2026-04-09 15:02:18,697 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:02:18,744 | INFO | data.calibration_engine | Zone 'toes' point: P=43.91 kPa, ADC=64.33 (std: 0.02)
+2026-04-09 15:02:21,706 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:02:21,765 | INFO | data.calibration_engine | Zone 'toes' point: P=43.91 kPa, ADC=64.33 (std: 0.02)
+2026-04-09 15:02:24,692 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:02:24,736 | INFO | data.calibration_engine | Zone 'toes' point: P=43.91 kPa, ADC=64.41 (std: 0.09)
+2026-04-09 15:03:46,182 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:03:46,259 | INFO | data.calibration_engine | Zone 'toes' point: P=18.39 kPa, ADC=49.95 (std: 0.12)
+2026-04-09 15:03:49,197 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:03:49,295 | INFO | data.calibration_engine | Zone 'toes' point: P=18.39 kPa, ADC=49.92 (std: 0.11)
+2026-04-09 15:03:52,207 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:03:52,311 | INFO | data.calibration_engine | Zone 'toes' point: P=18.39 kPa, ADC=49.94 (std: 0.11)
+2026-04-09 15:03:55,214 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:03:55,266 | INFO | data.calibration_engine | Zone 'toes' point: P=18.39 kPa, ADC=49.99 (std: 0.14)
+2026-04-09 15:04:18,274 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:18,331 | INFO | data.calibration_engine | Zone 'toes' point: P=28.83 kPa, ADC=51.11 (std: 0.07)
+2026-04-09 15:04:21,262 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:21,315 | INFO | data.calibration_engine | Zone 'toes' point: P=28.83 kPa, ADC=51.16 (std: 0.16)
+2026-04-09 15:04:24,248 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:24,301 | INFO | data.calibration_engine | Zone 'toes' point: P=28.83 kPa, ADC=51.18 (std: 0.15)
+2026-04-09 15:04:27,246 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:27,292 | INFO | data.calibration_engine | Zone 'toes' point: P=28.83 kPa, ADC=51.09 (std: 0.11)
+2026-04-09 15:04:50,182 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:50,233 | INFO | data.calibration_engine | Zone 'toes' point: P=39.23 kPa, ADC=52.76 (std: 0.85)
+2026-04-09 15:04:53,177 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:53,231 | INFO | data.calibration_engine | Zone 'toes' point: P=39.23 kPa, ADC=53.28 (std: 0.04)
+2026-04-09 15:04:56,168 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:56,222 | INFO | data.calibration_engine | Zone 'toes' point: P=39.23 kPa, ADC=53.23 (std: 0.11)
+2026-04-09 15:04:59,160 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:04:59,213 | INFO | data.calibration_engine | Zone 'toes' point: P=39.23 kPa, ADC=53.13 (std: 0.14)
+2026-04-09 15:05:25,093 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:05:25,143 | INFO | data.calibration_engine | Zone 'toes' point: P=49.62 kPa, ADC=55.60 (std: 0.10)
+2026-04-09 15:05:28,122 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:05:28,178 | INFO | data.calibration_engine | Zone 'toes' point: P=49.62 kPa, ADC=55.61 (std: 0.11)
+2026-04-09 15:05:31,106 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:05:31,214 | INFO | data.calibration_engine | Zone 'toes' point: P=49.62 kPa, ADC=55.73 (std: 0.21)
+2026-04-09 15:05:34,089 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:05:34,170 | INFO | data.calibration_engine | Zone 'toes' point: P=49.62 kPa, ADC=55.95 (std: 0.20)
+2026-04-09 15:06:52,050 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:06:52,147 | INFO | data.calibration_engine | Zone 'toes' point: P=16.20 kPa, ADC=59.25 (std: 0.05)
+2026-04-09 15:06:55,041 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:06:55,108 | INFO | data.calibration_engine | Zone 'toes' point: P=16.20 kPa, ADC=59.25 (std: 0.02)
+2026-04-09 15:06:58,049 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:06:58,114 | INFO | data.calibration_engine | Zone 'toes' point: P=16.20 kPa, ADC=59.27 (std: 0.07)
+2026-04-09 15:07:01,033 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:07:01,143 | INFO | data.calibration_engine | Zone 'toes' point: P=16.20 kPa, ADC=59.34 (std: 0.12)
+2026-04-09 15:07:28,146 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:07:28,197 | INFO | data.calibration_engine | Zone 'toes' point: P=24.30 kPa, ADC=59.88 (std: 0.22)
+2026-04-09 15:07:31,153 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:07:31,215 | INFO | data.calibration_engine | Zone 'toes' point: P=24.30 kPa, ADC=59.98 (std: 0.08)
+2026-04-09 15:07:34,142 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:07:34,196 | INFO | data.calibration_engine | Zone 'toes' point: P=24.30 kPa, ADC=59.97 (std: 0.08)
+2026-04-09 15:07:37,156 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:07:37,291 | INFO | data.calibration_engine | Zone 'toes' point: P=24.30 kPa, ADC=59.92 (std: 0.12)
+2026-04-09 15:08:12,535 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:12,650 | INFO | data.calibration_engine | Zone 'toes' point: P=31.64 kPa, ADC=68.74 (std: 0.05)
+2026-04-09 15:08:15,530 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:15,617 | INFO | data.calibration_engine | Zone 'toes' point: P=31.64 kPa, ADC=68.75 (std: 0.03)
+2026-04-09 15:08:18,530 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:18,613 | INFO | data.calibration_engine | Zone 'toes' point: P=31.64 kPa, ADC=68.75 (std: 0.01)
+2026-04-09 15:08:21,523 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:21,591 | INFO | data.calibration_engine | Zone 'toes' point: P=31.64 kPa, ADC=68.75 (std: 0.01)
+2026-04-09 15:08:42,234 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:42,298 | INFO | data.calibration_engine | Zone 'toes' point: P=39.48 kPa, ADC=68.75 (std: 0.00)
+2026-04-09 15:08:45,238 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:45,317 | INFO | data.calibration_engine | Zone 'toes' point: P=39.48 kPa, ADC=68.76 (std: 0.06)
+2026-04-09 15:08:48,227 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:48,290 | INFO | data.calibration_engine | Zone 'toes' point: P=39.48 kPa, ADC=68.82 (std: 0.17)
+2026-04-09 15:08:51,253 | WARNING | data.calibration_engine | Zone 'toes' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:08:51,327 | INFO | data.calibration_engine | Zone 'toes' point: P=39.48 kPa, ADC=69.01 (std: 0.25)
+2026-04-09 15:11:37,518 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:11:37,576 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.44 kPa, ADC=55.38 (std: 0.13)
+2026-04-09 15:11:40,516 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:11:40,563 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.44 kPa, ADC=55.49 (std: 0.05)
+2026-04-09 15:11:43,538 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:11:43,626 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.44 kPa, ADC=55.49 (std: 0.03)
+2026-04-09 15:11:59,546 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:11:59,592 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.38 kPa, ADC=58.91 (std: 0.08)
+2026-04-09 15:12:02,541 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:02,580 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.38 kPa, ADC=58.98 (std: 0.05)
+2026-04-09 15:12:05,539 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:05,592 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.38 kPa, ADC=59.00 (std: 0.03)
+2026-04-09 15:12:21,280 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:21,323 | INFO | data.calibration_engine | Zone 'forefoot' point: P=31.33 kPa, ADC=61.58 (std: 0.09)
+2026-04-09 15:12:24,279 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:24,326 | INFO | data.calibration_engine | Zone 'forefoot' point: P=31.33 kPa, ADC=61.66 (std: 0.05)
+2026-04-09 15:12:27,282 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:27,345 | INFO | data.calibration_engine | Zone 'forefoot' point: P=31.33 kPa, ADC=61.65 (std: 0.07)
+2026-04-09 15:12:46,381 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:46,448 | INFO | data.calibration_engine | Zone 'forefoot' point: P=39.38 kPa, ADC=64.23 (std: 0.09)
+2026-04-09 15:12:49,408 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:49,463 | INFO | data.calibration_engine | Zone 'forefoot' point: P=39.38 kPa, ADC=64.29 (std: 0.11)
+2026-04-09 15:12:52,387 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:12:52,443 | INFO | data.calibration_engine | Zone 'forefoot' point: P=39.38 kPa, ADC=64.43 (std: 0.09)
+2026-04-09 15:13:55,589 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:13:55,646 | INFO | data.calibration_engine | Zone 'forefoot' point: P=19.10 kPa, ADC=41.67 (std: 0.00)
+2026-04-09 15:13:58,568 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:13:58,624 | INFO | data.calibration_engine | Zone 'forefoot' point: P=19.10 kPa, ADC=41.67 (std: 0.01)
+2026-04-09 15:14:01,573 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:14:01,637 | INFO | data.calibration_engine | Zone 'forefoot' point: P=19.10 kPa, ADC=41.67 (std: 0.01)
+2026-04-09 15:14:49,994 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:14:50,052 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.41 kPa, ADC=64.60 (std: 0.00)
+2026-04-09 15:14:52,987 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:14:53,039 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.41 kPa, ADC=64.77 (std: 0.20)
+2026-04-09 15:14:56,005 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:14:56,060 | INFO | data.calibration_engine | Zone 'forefoot' point: P=27.41 kPa, ADC=64.99 (std: 0.05)
+2026-04-09 15:15:13,286 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:13,355 | INFO | data.calibration_engine | Zone 'forefoot' point: P=37.34 kPa, ADC=67.20 (std: 0.04)
+2026-04-09 15:15:16,282 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:16,327 | INFO | data.calibration_engine | Zone 'forefoot' point: P=37.34 kPa, ADC=67.20 (std: 0.03)
+2026-04-09 15:15:19,278 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:19,345 | INFO | data.calibration_engine | Zone 'forefoot' point: P=37.34 kPa, ADC=67.21 (std: 0.04)
+2026-04-09 15:15:38,355 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:38,413 | INFO | data.calibration_engine | Zone 'forefoot' point: P=47.89 kPa, ADC=68.54 (std: 0.19)
+2026-04-09 15:15:41,379 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:41,447 | INFO | data.calibration_engine | Zone 'forefoot' point: P=47.89 kPa, ADC=68.66 (std: 0.21)
+2026-04-09 15:15:44,365 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:15:44,419 | INFO | data.calibration_engine | Zone 'forefoot' point: P=47.89 kPa, ADC=68.80 (std: 0.05)
+2026-04-09 15:16:55,094 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:16:55,163 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.84 kPa, ADC=57.67 (std: 0.03)
+2026-04-09 15:16:58,083 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:16:58,129 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.84 kPa, ADC=57.81 (std: 0.16)
+2026-04-09 15:17:01,096 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:01,156 | INFO | data.calibration_engine | Zone 'forefoot' point: P=15.84 kPa, ADC=57.94 (std: 0.15)
+2026-04-09 15:17:14,149 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:14,197 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.74 kPa, ADC=63.66 (std: 0.05)
+2026-04-09 15:17:17,156 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:17,205 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.74 kPa, ADC=63.67 (std: 0.00)
+2026-04-09 15:17:20,176 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:20,234 | INFO | data.calibration_engine | Zone 'forefoot' point: P=23.74 kPa, ADC=63.68 (std: 0.06)
+2026-04-09 15:17:34,070 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:34,117 | INFO | data.calibration_engine | Zone 'forefoot' point: P=32.09 kPa, ADC=67.33 (std: 0.00)
+2026-04-09 15:17:37,060 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:37,110 | INFO | data.calibration_engine | Zone 'forefoot' point: P=32.09 kPa, ADC=67.33 (std: 0.00)
+2026-04-09 15:17:40,053 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:40,098 | INFO | data.calibration_engine | Zone 'forefoot' point: P=32.09 kPa, ADC=67.33 (std: 0.00)
+2026-04-09 15:17:59,629 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:17:59,675 | INFO | data.calibration_engine | Zone 'forefoot' point: P=40.40 kPa, ADC=73.00 (std: 0.01)
+2026-04-09 15:18:02,617 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:18:02,664 | INFO | data.calibration_engine | Zone 'forefoot' point: P=40.40 kPa, ADC=73.00 (std: 0.00)
+2026-04-09 15:18:05,615 | WARNING | data.calibration_engine | Zone 'forefoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:18:05,665 | INFO | data.calibration_engine | Zone 'forefoot' point: P=40.40 kPa, ADC=73.00 (std: 0.00)
+2026-04-09 15:22:13,809 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:13,860 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.15 kPa, ADC=63.07 (std: 0.15)
+2026-04-09 15:22:16,820 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:16,867 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.15 kPa, ADC=63.07 (std: 0.15)
+2026-04-09 15:22:19,816 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:19,881 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.15 kPa, ADC=63.10 (std: 0.13)
+2026-04-09 15:22:49,501 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:49,550 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=66.00 (std: 0.02)
+2026-04-09 15:22:52,494 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:52,550 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=66.00 (std: 0.00)
+2026-04-09 15:22:55,495 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:22:55,549 | INFO | data.calibration_engine | Zone 'midfoot' point: P=24.30 kPa, ADC=66.01 (std: 0.03)
+2026-04-09 15:23:14,391 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:14,440 | INFO | data.calibration_engine | Zone 'midfoot' point: P=32.86 kPa, ADC=68.92 (std: 0.18)
+2026-04-09 15:23:17,393 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:17,438 | INFO | data.calibration_engine | Zone 'midfoot' point: P=32.86 kPa, ADC=69.45 (std: 0.14)
+2026-04-09 15:23:20,396 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:20,445 | INFO | data.calibration_engine | Zone 'midfoot' point: P=32.86 kPa, ADC=69.52 (std: 0.07)
+2026-04-09 15:23:39,818 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:39,867 | INFO | data.calibration_engine | Zone 'midfoot' point: P=41.72 kPa, ADC=71.04 (std: 0.14)
+2026-04-09 15:23:42,829 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:42,874 | INFO | data.calibration_engine | Zone 'midfoot' point: P=41.72 kPa, ADC=71.15 (std: 0.23)
+2026-04-09 15:23:45,827 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:23:45,898 | INFO | data.calibration_engine | Zone 'midfoot' point: P=41.72 kPa, ADC=71.33 (std: 0.27)
+2026-04-09 15:24:49,629 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:24:49,690 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.40 kPa, ADC=57.29 (std: 0.14)
+2026-04-09 15:24:52,629 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:24:52,685 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.40 kPa, ADC=57.46 (std: 0.07)
+2026-04-09 15:24:55,637 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:24:55,696 | INFO | data.calibration_engine | Zone 'midfoot' point: P=16.40 kPa, ADC=57.50 (std: 0.02)
+2026-04-09 15:25:15,546 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:15,608 | INFO | data.calibration_engine | Zone 'midfoot' point: P=25.17 kPa, ADC=61.16 (std: 0.05)
+2026-04-09 15:25:18,546 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:18,601 | INFO | data.calibration_engine | Zone 'midfoot' point: P=25.17 kPa, ADC=61.16 (std: 0.04)
+2026-04-09 15:25:21,544 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:21,592 | INFO | data.calibration_engine | Zone 'midfoot' point: P=25.17 kPa, ADC=61.17 (std: 0.03)
+2026-04-09 15:25:45,539 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:45,593 | INFO | data.calibration_engine | Zone 'midfoot' point: P=34.08 kPa, ADC=63.50 (std: 0.03)
+2026-04-09 15:25:48,545 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:48,601 | INFO | data.calibration_engine | Zone 'midfoot' point: P=34.08 kPa, ADC=63.50 (std: 0.00)
+2026-04-09 15:25:51,542 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:25:51,607 | INFO | data.calibration_engine | Zone 'midfoot' point: P=34.08 kPa, ADC=63.50 (std: 0.03)
+2026-04-09 15:26:11,635 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:26:11,685 | INFO | data.calibration_engine | Zone 'midfoot' point: P=43.66 kPa, ADC=65.25 (std: 0.18)
+2026-04-09 15:26:14,650 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:26:14,701 | INFO | data.calibration_engine | Zone 'midfoot' point: P=43.66 kPa, ADC=65.32 (std: 0.08)
+2026-04-09 15:26:17,656 | WARNING | data.calibration_engine | Zone 'midfoot' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:26:17,709 | INFO | data.calibration_engine | Zone 'midfoot' point: P=43.66 kPa, ADC=65.32 (std: 0.08)
+2026-04-09 15:27:48,439 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:27:48,487 | INFO | data.calibration_engine | Zone 'heel' point: P=18.19 kPa, ADC=51.71 (std: 0.06)
+2026-04-09 15:27:51,436 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:27:51,480 | INFO | data.calibration_engine | Zone 'heel' point: P=18.19 kPa, ADC=51.73 (std: 0.04)
+2026-04-09 15:28:19,008 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:28:19,088 | INFO | data.calibration_engine | Zone 'heel' point: P=28.43 kPa, ADC=53.83 (std: 0.14)
+2026-04-09 15:28:21,996 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:28:22,042 | INFO | data.calibration_engine | Zone 'heel' point: P=28.43 kPa, ADC=53.83 (std: 0.12)
+2026-04-09 15:29:12,868 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:29:12,926 | INFO | data.calibration_engine | Zone 'heel' point: P=33.77 kPa, ADC=55.05 (std: 0.18)
+2026-04-09 15:29:15,874 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:29:15,940 | INFO | data.calibration_engine | Zone 'heel' point: P=33.77 kPa, ADC=54.93 (std: 0.14)
+2026-04-09 15:29:46,215 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:29:46,263 | INFO | data.calibration_engine | Zone 'heel' point: P=40.96 kPa, ADC=57.46 (std: 0.12)
+2026-04-09 15:29:49,255 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:29:49,304 | INFO | data.calibration_engine | Zone 'heel' point: P=40.96 kPa, ADC=57.58 (std: 0.10)
+2026-04-09 15:30:49,614 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:30:49,662 | INFO | data.calibration_engine | Zone 'heel' point: P=16.25 kPa, ADC=55.99 (std: 0.04)
+2026-04-09 15:30:52,630 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:30:52,687 | INFO | data.calibration_engine | Zone 'heel' point: P=16.25 kPa, ADC=56.00 (std: 0.03)
+2026-04-09 15:31:08,071 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:08,121 | INFO | data.calibration_engine | Zone 'heel' point: P=24.71 kPa, ADC=58.70 (std: 0.19)
+2026-04-09 15:31:11,099 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:11,144 | INFO | data.calibration_engine | Zone 'heel' point: P=24.71 kPa, ADC=59.09 (std: 0.22)
+2026-04-09 15:31:25,836 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:25,940 | INFO | data.calibration_engine | Zone 'heel' point: P=33.32 kPa, ADC=60.87 (std: 0.02)
+2026-04-09 15:31:28,835 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:28,879 | INFO | data.calibration_engine | Zone 'heel' point: P=33.32 kPa, ADC=60.88 (std: 0.00)
+2026-04-09 15:31:52,637 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:52,686 | INFO | data.calibration_engine | Zone 'heel' point: P=42.38 kPa, ADC=62.11 (std: 0.03)
+2026-04-09 15:31:55,648 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:31:55,713 | INFO | data.calibration_engine | Zone 'heel' point: P=42.38 kPa, ADC=62.10 (std: 0.05)
+2026-04-09 15:32:38,269 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:32:38,322 | INFO | data.calibration_engine | Zone 'heel' point: P=16.81 kPa, ADC=54.03 (std: 0.09)
+2026-04-09 15:32:41,270 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:32:41,329 | INFO | data.calibration_engine | Zone 'heel' point: P=16.81 kPa, ADC=54.16 (std: 0.12)
+2026-04-09 15:32:57,946 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:32:57,993 | INFO | data.calibration_engine | Zone 'heel' point: P=25.47 kPa, ADC=59.44 (std: 0.11)
+2026-04-09 15:33:00,934 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:33:00,980 | INFO | data.calibration_engine | Zone 'heel' point: P=25.47 kPa, ADC=59.49 (std: 0.06)
+2026-04-09 15:33:35,561 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:33:35,612 | INFO | data.calibration_engine | Zone 'heel' point: P=34.03 kPa, ADC=63.75 (std: 0.12)
+2026-04-09 15:33:38,538 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:33:38,586 | INFO | data.calibration_engine | Zone 'heel' point: P=34.03 kPa, ADC=63.93 (std: 0.12)
+2026-04-09 15:34:00,652 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:34:00,698 | INFO | data.calibration_engine | Zone 'heel' point: P=42.44 kPa, ADC=66.00 (std: 0.01)
+2026-04-09 15:34:03,640 | WARNING | data.calibration_engine | Zone 'heel' has 0 valid sensors in mask, ignoring mask for ADC computation
+2026-04-09 15:34:03,699 | INFO | data.calibration_engine | Zone 'heel' point: P=42.44 kPa, ADC=66.00 (std: 0.01)
+2026-04-09 15:34:43,276 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.6235, b=-6.3402, R²=0.4947
+2026-04-09 15:34:43,277 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.5634, b=-6.8279, R²=0.4438
+2026-04-09 15:34:43,278 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6480, b=-10.4693, R²=0.5607
+2026-04-09 15:34:43,278 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.5257, b=-0.1338, R²=0.2337
+2026-04-09 15:34:56,000 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.6235, b=-6.3402, R²=0.4947
+2026-04-09 15:34:56,000 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.5634, b=-6.8279, R²=0.4438
+2026-04-09 15:34:56,001 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6480, b=-10.4693, R²=0.5607
+2026-04-09 15:34:56,001 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.5257, b=-0.1338, R²=0.2337
+2026-04-09 15:34:56,060 | INFO | data.calibration_engine | Calibration exported to D:\Desktop\AI点云传输\smart_insole\calibration_files\calibration_v2_20260409_145728.json
+2026-04-09 15:34:57,190 | INFO | data.calibration_engine | Calibration raw records exported to D:\Desktop\AI点云传输\smart_insole\calibration_files\calibration_v2_20260409_145728_raw.csv (79200 rows)
+2026-04-09 15:34:57,191 | INFO | data.calibration_engine | Zone 'heel' fit: a=0.6235, b=-6.3402, R²=0.4947
+2026-04-09 15:34:57,191 | INFO | data.calibration_engine | Zone 'midfoot' fit: a=0.5634, b=-6.8279, R²=0.4438
+2026-04-09 15:34:57,192 | INFO | data.calibration_engine | Zone 'forefoot' fit: a=0.6480, b=-10.4693, R²=0.5607
+2026-04-09 15:34:57,192 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.5257, b=-0.1338, R²=0.2337
+2026-04-09 16:57:31,054 | INFO | __main__ | Application started
+2026-04-09 16:57:45,303 | INFO | data.calibration_engine | Calibration imported from D:/Desktop/AI点云传输/smart_insole/calibration_files/calibration_v2_20260409_145728.json (v2.0, 4 zones)

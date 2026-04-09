@@ -1,0 +1,1155 @@
+{
+  "version": "2.0",
+  "device_id": "4",
+  "contact_area_cm2": 19.63,
+  "noise_threshold": 10,
+  "zone_config": {
+    "heel": {
+      "row_start": 0,
+      "row_end": 3,
+      "display_name": "后跟区"
+    },
+    "midfoot": {
+      "row_start": 4,
+      "row_end": 7,
+      "display_name": "足弓区"
+    },
+    "forefoot": {
+      "row_start": 8,
+      "row_end": 11,
+      "display_name": "前掌区"
+    },
+    "toes": {
+      "row_start": 12,
+      "row_end": 15,
+      "display_name": "脚趾区"
+    }
+  },
+  "zones": {
+    "heel": {
+      "zero_offset": 0.0,
+      "a": 0.6234519050876118,
+      "b": -6.34015442747515,
+      "r_squared": 0.4946758105308596,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 18.186449312277126,
+          "avg_adc": 51.714375,
+          "adc_std": 0.05779476079196106,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 18.186449312277126,
+          "avg_adc": 51.7325,
+          "adc_std": 0.04337337893224368,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 28.425878757004586,
+          "avg_adc": 53.83145833333333,
+          "adc_std": 0.14308708862282285,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 28.425878757004586,
+          "avg_adc": 53.826458333333335,
+          "adc_std": 0.11973476909634709,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 33.77483443708609,
+          "avg_adc": 55.05166666666667,
+          "adc_std": 0.17776779485859884,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 33.77483443708609,
+          "avg_adc": 54.92854166666667,
+          "adc_std": 0.13777608015867226,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 40.95771777890983,
+          "avg_adc": 57.461666666666666,
+          "adc_std": 0.11897712198383163,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 40.95771777890983,
+          "avg_adc": 57.57625,
+          "adc_std": 0.09905017667828765,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 16.250636780438107,
+          "avg_adc": 55.99375,
+          "adc_std": 0.04284784125250653,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.250636780438107,
+          "avg_adc": 55.99666666666667,
+          "adc_std": 0.02867441755680876,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 24.707080998471728,
+          "avg_adc": 58.69625,
+          "adc_std": 0.19318196301242344,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 24.707080998471728,
+          "avg_adc": 59.092708333333334,
+          "adc_std": 0.21824097521750785,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 33.316352521650536,
+          "avg_adc": 60.8725,
+          "adc_std": 0.024874685927665494,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 33.316352521650536,
+          "avg_adc": 60.875,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 42.384105960264904,
+          "avg_adc": 62.11479166666667,
+          "adc_std": 0.034232025900057715,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 42.384105960264904,
+          "avg_adc": 62.103125,
+          "adc_std": 0.048580099234837575,
+          "sample_count": 600,
+          "position_label": "内侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 16.811003565970456,
+          "avg_adc": 54.032916666666665,
+          "adc_std": 0.0857554258082575,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.811003565970456,
+          "avg_adc": 54.165,
+          "adc_std": 0.1184271928232701,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 25.47121752419766,
+          "avg_adc": 59.43833333333333,
+          "adc_std": 0.1077677544021814,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 25.47121752419766,
+          "avg_adc": 59.486666666666665,
+          "adc_std": 0.05617433182117572,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 34.02954661232807,
+          "avg_adc": 63.75,
+          "adc_std": 0.12076147288491199,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 34.02954661232807,
+          "avg_adc": 63.930416666666666,
+          "adc_std": 0.12184276639268424,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 42.435048395313295,
+          "avg_adc": 65.99958333333333,
+          "adc_std": 0.010197698542100347,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 42.435048395313295,
+          "avg_adc": 65.99958333333333,
+          "adc_std": 0.010197698542100349,
+          "sample_count": 600,
+          "position_label": "外侧",
+          "repeat_index": 2
+        }
+      ]
+    },
+    "midfoot": {
+      "zero_offset": 0.0,
+      "a": 0.5633961927552578,
+      "b": -6.827911505368045,
+      "r_squared": 0.4438334037346098,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.148751910341314,
+          "avg_adc": 63.066388888888895,
+          "adc_std": 0.15119865723814033,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.148751910341314,
+          "avg_adc": 63.06888888888888,
+          "adc_std": 0.15115195526438385,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 16.148751910341314,
+          "avg_adc": 63.10055555555556,
+          "adc_std": 0.13291485253609128,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 65.99833333333333,
+          "adc_std": 0.023511226632776137,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 66.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 66.00527777777778,
+          "adc_std": 0.02918517931002092,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 68.92222222222223,
+          "adc_std": 0.1832491389163412,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 69.45305555555555,
+          "adc_std": 0.1359803793944076,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 32.85787060621498,
+          "avg_adc": 69.51583333333333,
+          "adc_std": 0.06511563787828936,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 41.72185430463576,
+          "avg_adc": 71.04166666666667,
+          "adc_std": 0.13819269959814165,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 41.72185430463576,
+          "avg_adc": 71.14666666666666,
+          "adc_std": 0.230675337023946,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 41.72185430463576,
+          "avg_adc": 71.33305555555556,
+          "adc_std": 0.2686556322979895,
+          "sample_count": 600,
+          "position_label": "内侧足弓",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 16.40346408558329,
+          "avg_adc": 57.288055555555545,
+          "adc_std": 0.1388974997330727,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.40346408558329,
+          "avg_adc": 57.46138888888889,
+          "adc_std": 0.07097154272342594,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 16.40346408558329,
+          "avg_adc": 57.49861111111112,
+          "adc_std": 0.0225239926947592,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 25.165562913907287,
+          "avg_adc": 61.16027777777777,
+          "adc_std": 0.04719852346508203,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 25.165562913907287,
+          "avg_adc": 61.16166666666667,
+          "adc_std": 0.04051748593714348,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 25.165562913907287,
+          "avg_adc": 61.167222222222215,
+          "adc_std": 0.030423959044651214,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 34.08048904737647,
+          "avg_adc": 63.496111111111105,
+          "adc_std": 0.026937284272001226,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 34.08048904737647,
+          "avg_adc": 63.5,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 34.08048904737647,
+          "avg_adc": 63.49888888888889,
+          "adc_std": 0.027193862778934312,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 43.65766683647479,
+          "avg_adc": 65.25472222222223,
+          "adc_std": 0.18251310624340727,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 43.65766683647479,
+          "avg_adc": 65.31916666666666,
+          "adc_std": 0.08296167120356779,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 43.65766683647479,
+          "avg_adc": 65.32166666666667,
+          "adc_std": 0.07547994582816168,
+          "sample_count": 600,
+          "position_label": "中部",
+          "repeat_index": 3
+        }
+      ]
+    },
+    "forefoot": {
+      "zero_offset": 0.0,
+      "a": 0.6480319428749531,
+      "b": -10.469295558564331,
+      "r_squared": 0.560654043266268,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 15.435557819663781,
+          "avg_adc": 55.38055555555556,
+          "adc_std": 0.12689915311667163,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 15.435557819663781,
+          "avg_adc": 55.485277777777775,
+          "adc_std": 0.048265437625030855,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 15.435557819663781,
+          "avg_adc": 55.49472222222223,
+          "adc_std": 0.029185179310019675,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 23.38257768721345,
+          "avg_adc": 58.914444444444456,
+          "adc_std": 0.08330369843433909,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 23.38257768721345,
+          "avg_adc": 58.980277777777786,
+          "adc_std": 0.053833734661959294,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 23.38257768721345,
+          "avg_adc": 58.99666666666667,
+          "adc_std": 0.030245905752924455,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 31.32959755476312,
+          "avg_adc": 61.58166666666666,
+          "adc_std": 0.09076322472765475,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 31.32959755476312,
+          "avg_adc": 61.658055555555556,
+          "adc_std": 0.04782216929984612,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 31.32959755476312,
+          "avg_adc": 61.651666666666664,
+          "adc_std": 0.06842811854352912,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 39.37850229240958,
+          "avg_adc": 64.22833333333334,
+          "adc_std": 0.09125158547582148,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 39.37850229240958,
+          "avg_adc": 64.28944444444446,
+          "adc_std": 0.11352788312530508,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 39.37850229240958,
+          "avg_adc": 64.43,
+          "adc_std": 0.08556998435329158,
+          "sample_count": 600,
+          "position_label": "第一跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 19.103413143148245,
+          "avg_adc": 41.666666666666664,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 19.103413143148245,
+          "avg_adc": 41.66722222222223,
+          "adc_std": 0.009606453592106153,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 19.103413143148245,
+          "avg_adc": 41.6675,
+          "adc_std": 0.01175561331638857,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 27.407030056036678,
+          "avg_adc": 64.6,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 27.407030056036678,
+          "avg_adc": 64.77066666666668,
+          "adc_std": 0.19817388548668563,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 27.407030056036678,
+          "avg_adc": 64.99199999999999,
+          "adc_std": 0.05230678732248882,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 37.34080489047377,
+          "avg_adc": 67.19566666666668,
+          "adc_std": 0.043755634557798496,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 37.34080489047377,
+          "avg_adc": 67.20333333333335,
+          "adc_std": 0.032489314482697006,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 37.34080489047377,
+          "avg_adc": 67.21033333333334,
+          "adc_std": 0.044270632352485594,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 47.885888945491594,
+          "avg_adc": 68.54433333333333,
+          "adc_std": 0.19227035364009573,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 47.885888945491594,
+          "avg_adc": 68.65866666666666,
+          "adc_std": 0.20661934942196014,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 47.885888945491594,
+          "avg_adc": 68.80166666666665,
+          "adc_std": 0.04827582785986776,
+          "sample_count": 600,
+          "position_label": "中心",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 15.843097300050943,
+          "avg_adc": 57.66944444444444,
+          "adc_std": 0.030301978096210536,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 15.843097300050943,
+          "avg_adc": 57.808888888888895,
+          "adc_std": 0.1648643288088137,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 15.843097300050943,
+          "avg_adc": 57.94166666666667,
+          "adc_std": 0.14821468413282438,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 23.739174732552218,
+          "avg_adc": 63.65944444444444,
+          "adc_std": 0.04853088618169032,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 23.739174732552218,
+          "avg_adc": 63.666666666666664,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 23.739174732552218,
+          "avg_adc": 63.67722222222221,
+          "adc_std": 0.061461118894814364,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 32.09373408048905,
+          "avg_adc": 67.33333333333333,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 32.09373408048905,
+          "avg_adc": 67.33333333333333,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 32.09373408048905,
+          "avg_adc": 67.33333333333333,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 40.397350993377486,
+          "avg_adc": 72.99944444444445,
+          "adc_std": 0.013596931389466936,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 40.397350993377486,
+          "avg_adc": 73.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 40.397350993377486,
+          "avg_adc": 73.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "第五跖骨侧",
+          "repeat_index": 3
+        }
+      ]
+    },
+    "toes": {
+      "zero_offset": 0.0,
+      "a": 0.5256871633400428,
+      "b": -0.13380814543147201,
+      "r_squared": 0.23370964866608857,
+      "valid_sensor_count": 0,
+      "data_points": [
+        {
+          "pressure_kpa": 0.0,
+          "avg_adc": 0.0,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 17.52419765664799,
+          "avg_adc": 55.16527777777779,
+          "adc_std": 0.015150989048104945,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 17.52419765664799,
+          "avg_adc": 55.19083333333333,
+          "adc_std": 0.061758565157964684,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 17.52419765664799,
+          "avg_adc": 55.20805555555556,
+          "adc_std": 0.07391133744202867,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 17.52419765664799,
+          "avg_adc": 55.280555555555544,
+          "adc_std": 0.07871459619613967,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 26.846663270504333,
+          "avg_adc": 59.61611111111112,
+          "adc_std": 0.1588140849554827,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 26.846663270504333,
+          "avg_adc": 59.725,
+          "adc_std": 0.15612494995996107,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 26.846663270504333,
+          "avg_adc": 59.79111111111111,
+          "adc_std": 0.18326934910395584,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 26.846663270504333,
+          "avg_adc": 59.80694444444444,
+          "adc_std": 0.19672766630893052,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 34.94651044319919,
+          "avg_adc": 62.501666666666665,
+          "adc_std": 0.13192660698141825,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 34.94651044319919,
+          "avg_adc": 62.635,
+          "adc_std": 0.17217830981389812,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 34.94651044319919,
+          "avg_adc": 62.73194444444444,
+          "adc_std": 0.15470376909707087,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 34.94651044319919,
+          "avg_adc": 62.7775,
+          "adc_std": 0.1246597220287953,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 43.912379011716766,
+          "avg_adc": 64.43583333333333,
+          "adc_std": 0.08925229533307553,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 43.912379011716766,
+          "avg_adc": 64.33222222222223,
+          "adc_std": 0.019212907184211488,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 43.912379011716766,
+          "avg_adc": 64.33166666666666,
+          "adc_std": 0.023511226632776137,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 43.912379011716766,
+          "avg_adc": 64.40861111111111,
+          "adc_std": 0.08834861852378961,
+          "sample_count": 600,
+          "position_label": "大脚趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 18.39021905247071,
+          "avg_adc": 49.95041666666667,
+          "adc_std": 0.11832086201887175,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 18.39021905247071,
+          "avg_adc": 49.92270833333333,
+          "adc_std": 0.1094015840709001,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 18.39021905247071,
+          "avg_adc": 49.93541666666667,
+          "adc_std": 0.11454544828242728,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 18.39021905247071,
+          "avg_adc": 49.990833333333335,
+          "adc_std": 0.13719410418171119,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 28.833418237391747,
+          "avg_adc": 51.11208333333333,
+          "adc_std": 0.07100347213732267,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 28.833418237391747,
+          "avg_adc": 51.16416666666667,
+          "adc_std": 0.16481471077816112,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 28.833418237391747,
+          "avg_adc": 51.176875,
+          "adc_std": 0.1547566133481862,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 28.833418237391747,
+          "avg_adc": 51.09291666666667,
+          "adc_std": 0.11393452676379048,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 39.22567498726439,
+          "avg_adc": 52.763035714285714,
+          "adc_std": 0.8490391540553632,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 39.22567498726439,
+          "avg_adc": 53.28071428571429,
+          "adc_std": 0.041348444681160786,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 39.22567498726439,
+          "avg_adc": 53.235,
+          "adc_std": 0.11056210739596388,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 39.22567498726439,
+          "avg_adc": 53.133809523809525,
+          "adc_std": 0.14328428206725338,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 49.617931737137035,
+          "avg_adc": 55.600476190476186,
+          "adc_std": 0.10255135321072724,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 49.617931737137035,
+          "avg_adc": 55.61404761904761,
+          "adc_std": 0.10652174466355543,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 49.617931737137035,
+          "avg_adc": 55.73238095238094,
+          "adc_std": 0.20982445962012097,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 49.617931737137035,
+          "avg_adc": 55.95285714285715,
+          "adc_std": 0.19852003445907654,
+          "sample_count": 600,
+          "position_label": "二三趾中部",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 16.19969434538971,
+          "avg_adc": 59.24583333333333,
+          "adc_std": 0.04545296714431547,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 16.19969434538971,
+          "avg_adc": 59.24916666666667,
+          "adc_std": 0.020395397084200698,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 16.19969434538971,
+          "avg_adc": 59.2675,
+          "adc_std": 0.0685109480302236,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 16.19969434538971,
+          "avg_adc": 59.344166666666666,
+          "adc_std": 0.12113754808297696,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 59.87625,
+          "adc_std": 0.2150544989066725,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 59.98041666666666,
+          "adc_std": 0.08373963451609333,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 59.97416666666667,
+          "adc_std": 0.07745518417482174,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 24.299541518084567,
+          "avg_adc": 59.91791666666666,
+          "adc_std": 0.11828564179796107,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 31.63525216505349,
+          "avg_adc": 68.73958333333333,
+          "adc_std": 0.04995657836784083,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 31.63525216505349,
+          "avg_adc": 68.74708333333334,
+          "adc_std": 0.02684510611307436,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 31.63525216505349,
+          "avg_adc": 68.74916666666667,
+          "adc_std": 0.014409680388158819,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 31.63525216505349,
+          "avg_adc": 68.74958333333333,
+          "adc_std": 0.010197698542100347,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 4
+        },
+        {
+          "pressure_kpa": 39.48038716250637,
+          "avg_adc": 68.75,
+          "adc_std": 0.0,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 1
+        },
+        {
+          "pressure_kpa": 39.48038716250637,
+          "avg_adc": 68.7575,
+          "adc_std": 0.06077622890571609,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 2
+        },
+        {
+          "pressure_kpa": 39.48038716250637,
+          "avg_adc": 68.82083333333334,
+          "adc_std": 0.17435396627423064,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 3
+        },
+        {
+          "pressure_kpa": 39.48038716250637,
+          "avg_adc": 69.00833333333334,
+          "adc_std": 0.24986107250941583,
+          "sample_count": 600,
+          "position_label": "四五趾侧",
+          "repeat_index": 4
+        }
+      ]
+    }
+  },
+  "created_at": "2026-04-09T15:34:56"
+}

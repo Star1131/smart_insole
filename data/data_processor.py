@@ -54,8 +54,9 @@ class DataProcessor(QObject):
         adc_calibrated = self._apply_calibration(adc_filtered.astype(np.float64), zone_metrics)
         metrics_matrix = adc_filtered.astype(np.float64) if self._display_mode == "raw" else adc_calibrated
 
-        total_pressure = float(np.sum(metrics_matrix[metrics_matrix > 0.0]))
-        cop = self._compute_cop(metrics_matrix, total_pressure)
+        _valid = metrics_matrix[metrics_matrix > 0.0]
+        total_pressure = float(np.mean(_valid)) if _valid.size > 0 else 0.0
+        cop = self._compute_cop(metrics_matrix, float(np.sum(_valid)))
         peak_index = int(np.argmax(metrics_matrix))
         peak_position = tuple(int(v) for v in np.unravel_index(peak_index, (ADC_ROWS, ADC_COLS)))
         peak_pressure = float(metrics_matrix[peak_position])
