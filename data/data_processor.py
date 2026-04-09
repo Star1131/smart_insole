@@ -211,11 +211,39 @@ class DataProcessor(QObject):
             metric.pressure_kpa = float(pressure_kpa)
 
             region = adc_data[zone.row_start : zone.row_end + 1, :]
-            active_mask = region > 0.0
-            region_cal = np.zeros_like(region, dtype=np.float64)
-            region_cal[active_mask] = float(pressure_kpa)
+            if self._valid_mask is not None:
+                mask_region = self._valid_mask[zone.row_start : zone.row_end + 1, :]
+                region_source = np.where(mask_region, region, 0.0)
+            else:
+                region_source = region
+
+            region_cal = self._scale_zone_region_preserving_shape(
+                region_source=region_source,
+                target_pressure_kpa=float(pressure_kpa),
+            )
             calibrated[zone.row_start : zone.row_end + 1, :] = region_cal
         return calibrated
+
+    @staticmethod
+    def _scale_zone_region_preserving_shape(
+        region_source: np.ndarray,
+        target_pressure_kpa: float,
+    ) -> np.ndarray:
+        region = np.asarray(region_source, dtype=np.float64)
+        region_cal = np.zeros_like(region, dtype=np.float64)
+
+        active_mask = region > 0.0
+        if not np.any(active_mask):
+            return region_cal
+
+        active_values = region[active_mask]
+        mean_value = float(np.mean(active_values))
+        if mean_value <= 1e-12:
+            return region_cal
+
+        scale = float(target_pressure_kpa) / mean_value
+        region_cal[active_mask] = active_values * scale
+        return region_cal
 
     def _compute_zone_metrics(self, adc_filtered: np.ndarray) -> dict[str, ZoneMetrics]:
         metrics: dict[str, ZoneMetrics] = {}

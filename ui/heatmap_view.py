@@ -12,14 +12,13 @@ from config import (
     ADC_NOISE_THRESHOLD,
     ADC_ROWS,
     DEFAULT_FOOT_ZONES,
+    HEATMAP_RBF_SIGMA,
+    HEATMAP_TOE_RBF_SIGMA,
+    HEATMAP_TOE_ROW_START,
+    HEATMAP_TOE_TRANSITION_ROWS,
     HEATMAP_UPSAMPLE,
     INSOLE_CONTOUR_RIGHT,
 )
-
-# Gaussian RBF smoothing radius (display coordinate units).
-# ~1 grid-cell yields smooth pressure gradients without blurring detail.
-_RBF_SIGMA = 1.0
-
 
 class HeatmapView(QWidget):
     hover_text_changed = Signal(str)
@@ -200,7 +199,8 @@ class HeatmapView(QWidget):
 
         sensor_pts = self._sensor_xy.reshape(-1, 2)
         dists = cdist(inside_pts, sensor_pts)
-        w = np.exp(-dists ** 2 / (2.0 * _RBF_SIGMA ** 2))
+        sigma = _sigma_for_canvas_rows(inside_pts[:, 1])
+        w = np.exp(-dists ** 2 / (2.0 * sigma[:, None] ** 2))
         sums = w.sum(axis=1, keepdims=True)
         sums[sums < 1e-15] = 1.0
         w /= sums
@@ -301,3 +301,14 @@ class HeatmapView(QWidget):
                 inside = not inside
             j = i
         return inside
+
+
+def _sigma_for_canvas_rows(rows: np.ndarray) -> np.ndarray:
+    row_values = np.asarray(rows, dtype=np.float64)
+    transition = max(float(HEATMAP_TOE_TRANSITION_ROWS), 1e-6)
+    blend_start = float(HEATMAP_TOE_ROW_START) - transition
+    blend = np.clip((row_values - blend_start) / transition, 0.0, 1.0)
+    sigma = float(HEATMAP_RBF_SIGMA) + (
+        float(HEATMAP_TOE_RBF_SIGMA) - float(HEATMAP_RBF_SIGMA)
+    ) * blend
+    return np.maximum(sigma, 1e-6)

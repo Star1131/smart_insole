@@ -47,6 +47,14 @@ DEFAULT_FOOT_ZONES = (
 
 # 热力图上采样倍率（16×8 → 160×80，使色彩过渡更平滑）
 HEATMAP_UPSAMPLE = 10
+HEATMAP_RBF_SIGMA = 1.0
+HEATMAP_TOE_RBF_SIGMA = 0.55
+HEATMAP_TOE_TRANSITION_ROWS = 1.0
+HEATMAP_TOE_ROW_START = next(
+    int(zone["row_start"])
+    for zone in DEFAULT_FOOT_ZONES
+    if str(zone["name"]) == "toes"
+)
 
 # 右脚鞋垫轮廓控制点（显示坐标：x=0..8 列方向, y=0..16 行方向）
 # y=0 后跟（底部）, y=16 脚趾（顶部）

@@ -687,3 +687,5 @@ KeyError: 4
 2026-04-09 10:06:15,215 | INFO | data.calibration_engine | Calibration imported from D:/Desktop/AI点云传输/smart_insole/calibration_files/calibration_v2_20260408_194603.json (v2.0, 4 zones)
 2026-04-09 10:08:45,618 | INFO | __main__ | Application started
 2026-04-09 10:08:53,039 | INFO | data.calibration_engine | Calibration imported from D:/Desktop/AI点云传输/smart_insole/calibration_files/calibration_v2_20260408_194603.json (v2.0, 4 zones)
+2026-04-09 10:35:46,357 | INFO | __main__ | Application started
+2026-04-09 10:35:55,099 | INFO | data.calibration_engine | Calibration imported from D:/Desktop/AI点云传输/smart_insole/calibration_files/calibration_v2_20260408_194603.json (v2.0, 4 zones)
