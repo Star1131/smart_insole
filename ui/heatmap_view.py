@@ -45,12 +45,12 @@ class HeatmapView(QWidget):
         self._canvas_w = self._cols * scale
 
         self._sensor_xy = self._build_sensor_positions()
-        self._canvas_mask = self._build_canvas_mask()
-        self._inside_idx = np.where(self._canvas_mask.ravel())[0]
+        self._footprint_mask = self._build_soft_footprint_mask()
         self._interp_w = self._precompute_weights()
 
         # --- pyqtgraph ---
         self._plot = pg.PlotWidget(parent=self)
+        self._plot.setBackground("#08111a")
         self._plot.setMenuEnabled(False)
         self._plot.setMouseEnabled(x=False, y=False)
         self._plot.hideAxis("left")
@@ -65,15 +65,6 @@ class HeatmapView(QWidget):
         self._image_item.setImage(blank, autoLevels=False, levels=(0.0, 1.0))
         self._image_item.setRect(0, 0, self._cols, self._rows)
         self._plot.addItem(self._image_item)
-
-        self._overlay_item = pg.ImageItem(axisOrder="row-major")
-        self._plot.addItem(self._overlay_item)
-        self._render_static_overlay()
-
-        cx = [p[0] for p in self._contour] + [self._contour[0][0]]
-        cy = [p[1] for p in self._contour] + [self._contour[0][1]]
-        self._outline_item = pg.PlotDataItem(cx, cy, pen=pg.mkPen("#f5c842", width=2.5))
-        self._plot.addItem(self._outline_item)
 
         self._init_zone_lines()
 
@@ -121,9 +112,13 @@ class HeatmapView(QWidget):
         self._data = display
 
         flat = display.ravel().astype(np.float64)
-        canvas_flat = np.zeros(self._canvas_h * self._canvas_w, dtype=np.float64)
-        canvas_flat[self._inside_idx] = self._interp_w @ flat
+        canvas_flat = self._interp_w @ flat
         canvas = np.clip(canvas_flat, 0.0, None).reshape(self._canvas_h, self._canvas_w)
+        canvas *= self._footprint_mask
+        hi = float(np.max(canvas))
+        if hi > 1e-6:
+            emergence = np.clip(canvas / hi, 0.0, 1.0)
+            canvas *= np.clip((emergence - 0.04) / 0.96, 0.0, 1.0)
 
         hi = float(np.max(canvas))
         self._image_item.setImage(
@@ -166,7 +161,7 @@ class HeatmapView(QWidget):
             return 0.0, float(self._cols)
         return min(xs), max(xs)
 
-    # ── high-res foot mask (vectorised scanline) ──
+    # ── high-res footprint field ──
 
     def _build_canvas_mask(self) -> np.ndarray:
         ys = (np.arange(self._canvas_h) + 0.5) / self._canvas_h * self._rows
@@ -188,35 +183,53 @@ class HeatmapView(QWidget):
             mask ^= cond & (gx < x_cross)
         return mask
 
+    def _build_soft_footprint_mask(self) -> np.ndarray:
+        inside = self._build_canvas_mask()
+        ys = (np.arange(self._canvas_h) + 0.5) / self._canvas_h * self._rows
+        xs = (np.arange(self._canvas_w) + 0.5) / self._canvas_w * self._cols
+        gy, gx = np.meshgrid(ys, xs, indexing="ij")
+        points = np.column_stack([gx.ravel(), gy.ravel()])
+        distances = self._distance_to_contour(points).reshape(self._canvas_h, self._canvas_w)
+
+        fade_sigma = 0.65
+        footprint = np.ones((self._canvas_h, self._canvas_w), dtype=np.float64)
+        outside = ~inside
+        footprint[outside] = np.exp(
+            -(distances[outside] ** 2) / (2.0 * fade_sigma * fade_sigma)
+        )
+        footprint[footprint < 0.015] = 0.0
+        return footprint.astype(np.float32)
+
+    def _distance_to_contour(self, points: np.ndarray) -> np.ndarray:
+        poly = np.asarray(self._contour, dtype=np.float64)
+        seg_start = poly
+        seg_end = np.roll(poly, -1, axis=0)
+        seg_vec = seg_end - seg_start
+        seg_len_sq = np.sum(seg_vec * seg_vec, axis=1)
+
+        delta = points[:, None, :] - seg_start[None, :, :]
+        projection = np.sum(delta * seg_vec[None, :, :], axis=2) / (seg_len_sq[None, :] + 1e-12)
+        projection = np.clip(projection, 0.0, 1.0)
+        nearest = seg_start[None, :, :] + projection[:, :, None] * seg_vec[None, :, :]
+        dist_sq = np.sum((points[:, None, :] - nearest) ** 2, axis=2)
+        return np.sqrt(np.min(dist_sq, axis=1))
+
     # ── RBF interpolation weights ──
 
     def _precompute_weights(self) -> np.ndarray:
         ys = (np.arange(self._canvas_h) + 0.5) / self._canvas_h * self._rows
         xs = (np.arange(self._canvas_w) + 0.5) / self._canvas_w * self._cols
         gy, gx = np.meshgrid(ys, xs, indexing="ij")
-        all_pts = np.column_stack([gx.ravel(), gy.ravel()])
-        inside_pts = all_pts[self._inside_idx]
+        canvas_pts = np.column_stack([gx.ravel(), gy.ravel()])
 
         sensor_pts = self._sensor_xy.reshape(-1, 2)
-        dists = cdist(inside_pts, sensor_pts)
-        sigma = _sigma_for_canvas_rows(inside_pts[:, 1])
+        dists = cdist(canvas_pts, sensor_pts)
+        sigma = _sigma_for_canvas_rows(canvas_pts[:, 1])
         w = np.exp(-dists ** 2 / (2.0 * sigma[:, None] ** 2))
         sums = w.sum(axis=1, keepdims=True)
         sums[sums < 1e-15] = 1.0
         w /= sums
         return w.astype(np.float32)
-
-    # ── static overlay & outline ──
-
-    def _render_static_overlay(self) -> None:
-        rgba = np.zeros((self._canvas_h, self._canvas_w, 4), dtype=np.uint8)
-        outside = ~self._canvas_mask
-        rgba[outside, 0] = 20
-        rgba[outside, 1] = 20
-        rgba[outside, 2] = 20
-        rgba[outside, 3] = 220
-        self._overlay_item.setImage(rgba, autoLevels=False)
-        self._overlay_item.setRect(0, 0, self._cols, self._rows)
 
     # ── zone boundaries ──
 
@@ -233,9 +246,8 @@ class HeatmapView(QWidget):
             boundaries.add(int(zone["row_end"]) + 1)
 
         for b in sorted(v for v in boundaries if 0 < v < self._rows):
-            x_lo, x_hi = self._contour_x_bounds(float(b))
             line = pg.PlotDataItem(
-                [x_lo, x_hi],
+                [0.0, float(self._cols)],
                 [float(b), float(b)],
                 pen=pg.mkPen(
                     color="#bbbbbb", width=1,
@@ -248,13 +260,12 @@ class HeatmapView(QWidget):
         for zone in self._zones:
             rs, re = int(zone["row_start"]), int(zone["row_end"])
             y_c = (rs + re + 1) * 0.5
-            x_lo, x_hi = self._contour_x_bounds(y_c)
             label = pg.TextItem(
                 text=str(zone["display_name"]),
                 color="#ffffff",
                 anchor=(0.5, 0.5),
             )
-            label.setPos((x_lo + x_hi) * 0.5, y_c)
+            label.setPos(self._cols * 0.5, y_c)
             label.setZValue(50)
             self._plot.addItem(label)
             self._zone_labels.append(label)
@@ -276,31 +287,14 @@ class HeatmapView(QWidget):
         if not (0 <= row < self._rows and 0 <= col < self._cols):
             return
 
-        in_foot = self._pip_scalar(x_plot, y_plot, self._contour)
         value = float(self._data[row, col])
         zone = self._zone_name_by_row(row)
         unit = "kPa" if self._display_mode == "calibrated" else "ADC"
         tip = (
-            f"通道: ({row}, {col}) | 值: {value:.2f} {unit} | "
-            f"{'足底区域' if in_foot else '轮廓外'} | 分区: {zone}"
+            f"通道: ({row}, {col}) | 值: {value:.2f} {unit} | 分区: {zone}"
         )
         QToolTip.showText(QCursor.pos(), tip, self)
         self.hover_text_changed.emit(tip)
-
-    @staticmethod
-    def _pip_scalar(x: float, y: float, poly: list[tuple[float, float]]) -> bool:
-        inside = False
-        n = len(poly)
-        j = n - 1
-        for i in range(n):
-            xi, yi = poly[i]
-            xj, yj = poly[j]
-            if ((yi > y) != (yj > y)) and (
-                x < (xj - xi) * (y - yi) / ((yj - yi) + 1e-12) + xi
-            ):
-                inside = not inside
-            j = i
-        return inside
 
 
 def _sigma_for_canvas_rows(rows: np.ndarray) -> np.ndarray:
