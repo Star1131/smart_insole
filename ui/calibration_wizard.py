@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from datetime import datetime
+from functools import partial
 from pathlib import Path
 
 import numpy as np
 import pyqtgraph as pg
-from PySide6.QtCore import Signal
+from PySide6.QtCore import QTimer, Signal
 from PySide6.QtWidgets import (
     QAbstractItemView,
     QCheckBox,
@@ -62,6 +63,7 @@ class CalibrationWizard(QWizard):
         self._batch_forces: list[float] = []
         self._batch_force_idx: int = 0
         self._batch_overview_start_row: int = 0
+        self._prompt_box: QMessageBox | None = None
 
         self._build_pages()
         self._bind_signals()
@@ -379,23 +381,53 @@ class CalibrationWizard(QWizard):
             ]):
                 self._overview_table.setItem(row, col, QTableWidgetItem(text))
 
-        self._prompt_and_start_next_force()
+        QTimer.singleShot(0, self._prompt_and_start_next_force)
 
     def _prompt_and_start_next_force(self) -> None:
+        if self._prompt_box is not None:
+            return
+        if not self._batch_forces or self._batch_force_idx >= len(self._batch_forces):
+            return
+
         force_n = self._batch_forces[self._batch_force_idx]
         idx = self._batch_force_idx + 1
         total = len(self._batch_forces)
 
-        reply = QMessageBox.information(
-            self,
-            "准备砝码",
+        box = QMessageBox(self)
+        box.setIcon(QMessageBox.Icon.Information)
+        box.setWindowTitle("准备砝码")
+        box.setText(
             f"请放置 {force_n:.1f} N 砝码（第 {idx}/{total} 个力值）\n"
             f"分区：{self._zone_combo.currentText()}\n"
             f"位置：{self._collect_position_label}\n\n"
-            "准备好后点击 OK 开始采集。",
-            QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel,
+            "准备好后点击 OK 开始采集。"
         )
-        if reply == QMessageBox.StandardButton.Cancel:
+        box.setStandardButtons(
+            QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel
+        )
+        box.finished.connect(
+            partial(self._on_force_prompt_finished, self._batch_force_idx, box)
+        )
+        self._prompt_box = box
+        box.open()
+
+    def _on_force_prompt_finished(
+        self, force_idx: int, box: QMessageBox, _result: int
+    ) -> None:
+        clicked_button = box.clickedButton()
+        accepted = (
+            clicked_button is not None
+            and box.standardButton(clicked_button) == QMessageBox.StandardButton.Ok
+        )
+        if self._prompt_box is box:
+            self._prompt_box = None
+        box.deleteLater()
+        self._handle_force_prompt_decision(force_idx, accepted)
+
+    def _handle_force_prompt_decision(self, force_idx: int, accepted: bool) -> None:
+        if force_idx != self._batch_force_idx or not self._batch_forces:
+            return
+        if not accepted:
             self._on_batch_cancelled()
             return
 
@@ -500,7 +532,7 @@ class CalibrationWizard(QWizard):
         self._batch_force_idx += 1
 
         if self._batch_force_idx < len(self._batch_forces):
-            self._prompt_and_start_next_force()
+            QTimer.singleShot(0, self._prompt_and_start_next_force)
         else:
             zone_text = self._zone_combo.currentText()
             self._batch_forces = []
@@ -510,6 +542,9 @@ class CalibrationWizard(QWizard):
             )
 
     def _on_batch_cancelled(self) -> None:
+        if self._prompt_box is not None:
+            self._prompt_box.deleteLater()
+            self._prompt_box = None
         for i in range(self._batch_force_idx, len(self._batch_forces)):
             row = self._batch_overview_start_row + i
             if row < self._overview_table.rowCount():

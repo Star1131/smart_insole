@@ -93,9 +93,11 @@ class ProtocolParser(QObject):
             data=pack1.payload + pack2.payload,
             timestamp=max(pack1.recv_ts, pack2.recv_ts),
         )
+        # 先移除缓存，再发信号，避免槽函数里进入嵌套事件循环后重入 feed()
+        # 导致同一 sensor_type 被再次处理并提前删除，返回这里时触发 KeyError。
+        self._pending_packets.pop(packet.sensor_type, None)
         self._stats["frames_ok"] += 1
         self.frame_merged.emit(merged)
-        del self._pending_packets[packet.sensor_type]
 
     def _cleanup_expired(self) -> None:
         if not self._pending_packets:

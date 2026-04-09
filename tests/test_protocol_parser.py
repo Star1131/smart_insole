@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import time
 
+from PySide6.QtCore import QCoreApplication, QEventLoop, QTimer
+
 from communication.protocol_parser import ProtocolParser
 from config import FRAME_HEADER, PACK1_DATA_LEN, PACK1_SEQ, PACK2_DATA_LEN, PACK2_SEQ
 
@@ -118,3 +120,32 @@ def test_feed_interleaved_multi_sensor_packets() -> None:
     assert by_sensor[0x11].data[PACK1_DATA_LEN:] == bytes([0x33]) * PACK2_DATA_LEN
     assert by_sensor[0x22].data[:PACK1_DATA_LEN] == bytes([0x22]) * PACK1_DATA_LEN
     assert by_sensor[0x22].data[PACK1_DATA_LEN:] == bytes([0x44]) * PACK2_DATA_LEN
+
+
+def test_feed_reentrant_during_nested_event_loop_does_not_crash() -> None:
+    app = QCoreApplication.instance() or QCoreApplication([])
+    parser = ProtocolParser()
+    merged_frames: list = []
+
+    def on_frame(frame) -> None:
+        merged_frames.append(frame)
+        if len(merged_frames) != 1:
+            return
+
+        loop = QEventLoop()
+
+        def reenter() -> None:
+            parser.feed(
+                _build_subpacket(PACK1_SEQ, frame.sensor_type, 0x33)
+                + _build_subpacket(PACK2_SEQ, frame.sensor_type, 0x44)
+            )
+            loop.quit()
+
+        QTimer.singleShot(0, reenter)
+        loop.exec()
+
+    parser.frame_merged.connect(on_frame)
+    parser.feed(_build_subpacket(PACK1_SEQ, 0x04, 0x11) + _build_subpacket(PACK2_SEQ, 0x04, 0x22))
+
+    assert app is not None
+    assert len(merged_frames) == 2
