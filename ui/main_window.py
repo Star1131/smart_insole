@@ -7,6 +7,7 @@ from PySide6.QtCore import QTimer, Qt, Slot
 from PySide6.QtGui import QAction, QActionGroup
 from PySide6.QtWidgets import (
     QDockWidget,
+    QFileDialog,
     QLabel,
     QMainWindow,
     QMessageBox,
@@ -17,6 +18,7 @@ from PySide6.QtWidgets import (
 
 from communication.protocol_parser import ProtocolParser
 from config import APP_NAME, UI_REFRESH_INTERVAL_MS
+from data.calibration_engine import CalibrationEngine
 from data.data_processor import DataProcessor
 from data.models import ProcessedFrame
 from ui.data_control_panel import DataControlPanel
@@ -118,9 +120,7 @@ class MainWindow(QMainWindow):
         export_action = QAction("导出数据", self)
         menu_file.addAction(import_action)
         menu_file.addAction(export_action)
-        import_action.triggered.connect(
-            lambda: self._show_todo("标定导入将在 Day4 集成。")
-        )
+        import_action.triggered.connect(self._import_calibration_file)
         export_action.triggered.connect(
             lambda: self._show_todo("数据导出/录制控制将在 Day4/Day5 集成。")
         )
@@ -263,3 +263,39 @@ class MainWindow(QMainWindow):
         if apply_now:
             self._data_processor.set_calibration(profile)
             self.statusBar().showMessage("已应用新的分区标定参数", 3000)
+
+    @Slot()
+    def _import_calibration_file(self) -> None:
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "导入标定文件",
+            "",
+            "Calibration JSON (*.json);;All Files (*)",
+        )
+        if not file_path:
+            return
+
+        try:
+            profile = CalibrationEngine.import_json(file_path)
+            self._data_processor.set_calibration(profile)
+        except Exception as exc:
+            self._logger.exception("Failed to import calibration file: %s", file_path)
+            QMessageBox.critical(
+                self,
+                APP_NAME,
+                f"导入标定文件失败：{exc}",
+            )
+            self.statusBar().showMessage("导入标定文件失败", 3000)
+            return
+
+        zone_count = len(profile.zones)
+        self._set_display_mode("calibrated")
+        self.statusBar().showMessage(
+            f"已导入标定文件：{zone_count} 个分区已应用",
+            4000,
+        )
+        QMessageBox.information(
+            self,
+            APP_NAME,
+            f"标定文件已导入并应用。\n\n版本：{profile.version}\n分区数量：{zone_count}",
+        )
