@@ -14,9 +14,11 @@ from PySide6.QtWidgets import (
     QDoubleSpinBox,
     QFileDialog,
     QFormLayout,
+    QDialog,
     QGridLayout,
     QGroupBox,
     QHBoxLayout,
+    QInputDialog,
     QLabel,
     QLineEdit,
     QMessageBox,
@@ -60,14 +62,15 @@ class CalibrationWizard(QWizard):
         self._collect_position_label: str = ""
         self._collect_repeats_total: int = 0
         self._collect_repeats_done: int = 0
-        self._batch_forces: list[float] = []
+        self._batch_point_count: int = 0
+        self._current_force_n: float = 0.0
         self._batch_force_idx: int = 0
         self._batch_overview_start_row: int = 0
-        self._prompt_box: QMessageBox | None = None
+        self._force_input_dialog: QInputDialog | None = None
 
         self._build_pages()
         self._bind_signals()
-        self._sync_pressure_hint()
+        self._sync_collection_hint()
 
     def feed_adc_frame(self, adc_data: np.ndarray) -> None:
         self._engine.feed_frame(np.asarray(adc_data))
@@ -203,8 +206,8 @@ class CalibrationWizard(QWizard):
     def _build_collect_page(self, page: QWizardPage) -> None:
         layout = QVBoxLayout(page)
         layout.addWidget(QLabel(
-            "选择分区和位置，输入多个力值（逗号分隔），"
-            "系统按力值逐个提示并自动完成多次重复采集。"
+            "选择分区和位置，先输入本次要采集的压力点数量，"
+            "系统会在标定过程中逐点提示输入当前力值并自动完成多次重复采集。"
         ))
 
         form = QFormLayout()
@@ -215,16 +218,17 @@ class CalibrationWizard(QWizard):
         self._repeat_spin = QSpinBox(page)
         self._repeat_spin.setRange(1, 20)
         self._repeat_spin.setValue(3)
-        self._forces_edit = QLineEdit(page)
-        self._forces_edit.setText("49, 98, 147")
-        self._forces_edit.setPlaceholderText("逗号分隔，1-10 个，如 49, 98, 147")
-        self._forces_edit.textChanged.connect(self._sync_pressure_hint)
-        self._pressure_hint = QLabel("--")
+        self._repeat_spin.valueChanged.connect(self._sync_collection_hint)
+        self._point_count_spin = QSpinBox(page)
+        self._point_count_spin.setRange(1, 10)
+        self._point_count_spin.setValue(3)
+        self._point_count_spin.valueChanged.connect(self._sync_collection_hint)
+        self._collection_hint = QLabel("--")
         form.addRow("目标分区:", self._zone_combo)
         form.addRow("放置位置:", self._position_edit)
         form.addRow("每力值重复:", self._repeat_spin)
-        form.addRow("力值列表(N):", self._forces_edit)
-        form.addRow("对应压强:", self._pressure_hint)
+        form.addRow("压力点数量:", self._point_count_spin)
+        form.addRow("采集计划:", self._collection_hint)
         layout.addLayout(form)
 
         self._collect_progress = QProgressBar(page)
@@ -324,7 +328,7 @@ class CalibrationWizard(QWizard):
         )
 
     def _on_area_changed(self, _value: float) -> None:
-        self._sync_pressure_hint()
+        self._sync_collection_hint()
 
     def _on_start_zero(self) -> None:
         self._zero_ready = False
@@ -339,116 +343,102 @@ class CalibrationWizard(QWizard):
         if not zone_name:
             QMessageBox.warning(self, "提示", "请选择要采集的分区。")
             return
-        try:
-            forces = [
-                float(x.strip())
-                for x in self._forces_edit.text().split(",")
-                if x.strip()
-            ]
-        except ValueError:
-            QMessageBox.warning(self, "格式错误", "力值请用逗号分隔数字，如 49, 98, 147")
-            return
-        if not forces or len(forces) > 10:
-            QMessageBox.warning(self, "提示", "请输入 1-10 个力值。")
-            return
 
         position_label = self._position_edit.text().strip() or "未命名位置"
         self._collect_target_zone = zone_name
         self._collect_position_label = position_label
         self._collect_repeats_total = int(self._repeat_spin.value())
-        self._batch_forces = forces
+        self._batch_point_count = int(self._point_count_spin.value())
+        self._current_force_n = 0.0
         self._batch_force_idx = 0
 
         self._start_collect_btn.setEnabled(False)
         self._zone_combo.setEnabled(False)
         self._position_edit.setEnabled(False)
         self._repeat_spin.setEnabled(False)
-        self._forces_edit.setEnabled(False)
+        self._point_count_spin.setEnabled(False)
 
-        area = float(self._area_spin.value())
         self._batch_overview_start_row = self._overview_table.rowCount()
-        for force_n in forces:
+        for _ in range(self._batch_point_count):
             row = self._overview_table.rowCount()
             self._overview_table.insertRow(row)
-            pressure = force_n * 10.0 / area if area > 0 else 0.0
             for col, text in enumerate([
                 self._zone_combo.currentText(),
                 position_label,
-                f"{force_n:.1f}",
-                f"{pressure:.3f}",
+                "--",
+                "--",
                 f"0/{self._collect_repeats_total}",
-                "待采集",
+                "待输入",
             ]):
                 self._overview_table.setItem(row, col, QTableWidgetItem(text))
 
         QTimer.singleShot(0, self._prompt_and_start_next_force)
 
     def _prompt_and_start_next_force(self) -> None:
-        if self._prompt_box is not None:
+        if self._force_input_dialog is not None:
             return
-        if not self._batch_forces or self._batch_force_idx >= len(self._batch_forces):
+        if self._batch_point_count <= 0 or self._batch_force_idx >= self._batch_point_count:
             return
 
-        force_n = self._batch_forces[self._batch_force_idx]
         idx = self._batch_force_idx + 1
-        total = len(self._batch_forces)
-
-        box = QMessageBox(self)
-        box.setIcon(QMessageBox.Icon.Information)
-        box.setWindowTitle("准备砝码")
-        box.setText(
-            f"请放置 {force_n:.1f} N 砝码（第 {idx}/{total} 个力值）\n"
+        dialog = QInputDialog(self)
+        dialog.setWindowTitle("输入当前力值")
+        dialog.setLabelText(
+            f"第 {idx}/{self._batch_point_count} 个压力点\n"
             f"分区：{self._zone_combo.currentText()}\n"
             f"位置：{self._collect_position_label}\n\n"
-            "准备好后点击 OK 开始采集。"
+            "请输入当前力值 (N)，确认后开始采集。"
         )
-        box.setStandardButtons(
-            QMessageBox.StandardButton.Ok | QMessageBox.StandardButton.Cancel
+        dialog.setInputMode(QInputDialog.InputMode.DoubleInput)
+        dialog.setDoubleRange(0.1, 10000.0)
+        dialog.setDoubleDecimals(1)
+        dialog.setDoubleValue(max(self._current_force_n, 49.0))
+        dialog.finished.connect(
+            partial(self._on_force_input_finished, self._batch_force_idx, dialog)
         )
-        box.finished.connect(
-            partial(self._on_force_prompt_finished, self._batch_force_idx, box)
-        )
-        self._prompt_box = box
-        box.open()
+        self._force_input_dialog = dialog
+        dialog.open()
 
-    def _on_force_prompt_finished(
-        self, force_idx: int, box: QMessageBox, _result: int
+    def _on_force_input_finished(
+        self, force_idx: int, dialog: QInputDialog, result: int
     ) -> None:
-        clicked_button = box.clickedButton()
-        accepted = (
-            clicked_button is not None
-            and box.standardButton(clicked_button) == QMessageBox.StandardButton.Ok
-        )
-        if self._prompt_box is box:
-            self._prompt_box = None
-        box.deleteLater()
-        self._handle_force_prompt_decision(force_idx, accepted)
+        accepted = result == int(QDialog.DialogCode.Accepted)
+        force_n = float(dialog.doubleValue())
+        if self._force_input_dialog is dialog:
+            self._force_input_dialog = None
+        dialog.deleteLater()
+        self._handle_force_input_decision(force_idx, accepted, force_n)
 
-    def _handle_force_prompt_decision(self, force_idx: int, accepted: bool) -> None:
-        if force_idx != self._batch_force_idx or not self._batch_forces:
+    def _handle_force_input_decision(
+        self, force_idx: int, accepted: bool, force_n: float
+    ) -> None:
+        if force_idx != self._batch_force_idx or self._batch_point_count <= 0:
             return
         if not accepted:
             self._on_batch_cancelled()
             return
 
+        self._current_force_n = float(force_n)
         overview_row = self._batch_overview_start_row + self._batch_force_idx
+        pressure = self._current_force_n * 10.0 / float(self._area_spin.value())
+        self._overview_table.item(overview_row, 2).setText(f"{self._current_force_n:.1f}")
+        self._overview_table.item(overview_row, 3).setText(f"{pressure:.3f}")
         self._overview_table.item(overview_row, 5).setText("采集中")
         self._collect_repeats_done = 0
         self._collect_progress.setValue(0)
         self._start_next_collection_repeat()
 
     def _start_next_collection_repeat(self) -> None:
-        force_n = self._batch_forces[self._batch_force_idx]
         next_repeat = self._collect_repeats_done + 1
-        total_steps = len(self._batch_forces) * self._collect_repeats_total
+        total_steps = self._batch_point_count * self._collect_repeats_total
         current_step = self._batch_force_idx * self._collect_repeats_total + next_repeat
         self._collect_round_status.setText(
             f"状态：{self._zone_combo.currentText()} - {self._collect_position_label} - "
-            f"{force_n:.1f}N - 重复 {next_repeat}/{self._collect_repeats_total} "
+            f"{self._current_force_n:.1f}N - 重复 {next_repeat}/{self._collect_repeats_total} "
             f"[总进度 {current_step}/{total_steps}]"
         )
         self._engine.start_point_collection(
-            force_n=force_n,
+            force_n=self._current_force_n,
             duration_sec=CALIBRATION_DEFAULT_DURATION_SEC,
             zone_name=self._collect_target_zone,
             position_label=self._collect_position_label,
@@ -498,7 +488,7 @@ class CalibrationWizard(QWizard):
             self._collect_progress.setValue(100)
             self._start_mask_btn.setEnabled(True)
             self._start_zero_btn.setEnabled(True)
-            if not self._batch_forces:
+            if self._batch_point_count <= 0:
                 self._start_collect_btn.setEnabled(True)
 
     def _on_mask_detected(self, mask: np.ndarray) -> None:
@@ -515,7 +505,7 @@ class CalibrationWizard(QWizard):
 
     def _on_collection_complete(self, zone_name: str, point: CalibrationPoint) -> None:
         self._last_points[zone_name] = point
-        if zone_name != self._collect_target_zone or not self._batch_forces:
+        if zone_name != self._collect_target_zone or self._batch_point_count <= 0:
             return
 
         self._collect_repeats_done += 1
@@ -531,27 +521,29 @@ class CalibrationWizard(QWizard):
         self._overview_table.item(overview_row, 5).setText("已完成")
         self._batch_force_idx += 1
 
-        if self._batch_force_idx < len(self._batch_forces):
+        if self._batch_force_idx < self._batch_point_count:
             QTimer.singleShot(0, self._prompt_and_start_next_force)
         else:
             zone_text = self._zone_combo.currentText()
-            self._batch_forces = []
+            self._batch_point_count = 0
+            self._current_force_n = 0.0
             self._unlock_collect_ui()
             self._collect_round_status.setText(
                 f"状态：批量采集完成（{zone_text} - {self._collect_position_label}）"
             )
 
     def _on_batch_cancelled(self) -> None:
-        if self._prompt_box is not None:
-            self._prompt_box.deleteLater()
-            self._prompt_box = None
-        for i in range(self._batch_force_idx, len(self._batch_forces)):
+        if self._force_input_dialog is not None:
+            self._force_input_dialog.deleteLater()
+            self._force_input_dialog = None
+        for i in range(self._batch_force_idx, self._batch_point_count):
             row = self._batch_overview_start_row + i
             if row < self._overview_table.rowCount():
                 item = self._overview_table.item(row, 5)
                 if item and item.text() != "已完成":
                     item.setText("已取消")
-        self._batch_forces = []
+        self._batch_point_count = 0
+        self._current_force_n = 0.0
         self._unlock_collect_ui()
         self._collect_round_status.setText("状态：批量采集已取消")
 
@@ -560,7 +552,7 @@ class CalibrationWizard(QWizard):
         self._zone_combo.setEnabled(True)
         self._position_edit.setEnabled(True)
         self._repeat_spin.setEnabled(True)
-        self._forces_edit.setEnabled(True)
+        self._point_count_spin.setEnabled(True)
 
     def _on_fit_complete(self, results: dict[str, ZoneCalibrationResult]) -> None:
         row_map = {zone.name: idx for idx, zone in enumerate(self._zones)}
@@ -620,25 +612,15 @@ class CalibrationWizard(QWizard):
                 item.setBackground(pg.mkColor(bg))
                 self._zone_preview.setItem(r, c, item)
 
-    def _sync_pressure_hint(self) -> None:
-        area = float(self._area_spin.value()) if hasattr(self, "_area_spin") else 0.0
-        if area <= 0 or not hasattr(self, "_forces_edit"):
-            self._pressure_hint.setText("--")
+    def _sync_collection_hint(self) -> None:
+        if not hasattr(self, "_point_count_spin") or not hasattr(self, "_repeat_spin"):
             return
-        try:
-            forces = [
-                float(x.strip())
-                for x in self._forces_edit.text().split(",")
-                if x.strip()
-            ]
-        except ValueError:
-            self._pressure_hint.setText("格式错误")
-            return
-        if not forces:
-            self._pressure_hint.setText("--")
-            return
-        parts = [f"{f * 10.0 / area:.3f}" for f in forces]
-        self._pressure_hint.setText(" / ".join(parts) + " kPa")
+        point_count = int(self._point_count_spin.value())
+        repeat_count = int(self._repeat_spin.value())
+        total_rounds = point_count * repeat_count
+        self._collection_hint.setText(
+            f"{point_count} 个压力点，共 {total_rounds} 轮采集；每个压力点开始前输入当前力值 (N)。"
+        )
 
     def _default_save_path(self) -> Path:
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
