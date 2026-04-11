@@ -985,3 +985,4 @@ KeyError: 4
 2026-04-09 15:34:57,192 | INFO | data.calibration_engine | Zone 'toes' fit: a=0.5257, b=-0.1338, R²=0.2337
 2026-04-09 16:57:31,054 | INFO | __main__ | Application started
 2026-04-09 16:57:45,303 | INFO | data.calibration_engine | Calibration imported from D:/Desktop/AI点云传输/smart_insole/calibration_files/calibration_v2_20260409_145728.json (v2.0, 4 zones)
+2026-04-09 18:04:57,713 | INFO | __main__ | Application started
